@@ -1,0 +1,18 @@
+ORG 100H 
+
+JMP START 
+
+    ARR DB 01H,02H,03H,04H,05H
+    
+START:
+    MOV AX,00H
+    MOV CL,05H
+    MOV SI,00H
+BACK:
+    ADD AL, ARR[SI]
+    INC SI
+    DEC CL
+    JNZ BACK
+    MOV BL,05H
+    DIV BL
+RET
