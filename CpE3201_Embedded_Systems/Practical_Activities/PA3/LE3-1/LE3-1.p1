@@ -3,12 +3,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
 "2465
 [v _INTF `Vb ~T0 @X0 0 e@89 ]
-"2511
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
 "329
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "268
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"2461
+[v _INTE `Vb ~T0 @X0 0 e@92 ]
 [p mainexit ]
 "1335
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
@@ -18,8 +18,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "2463
 [v _INTEDG `Vb ~T0 @X0 0 e@1038 ]
-"2461
-[v _INTE `Vb ~T0 @X0 0 e@92 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic16f877a.h: 47: extern volatile unsigned char INDF @ 0x000;
@@ -1066,163 +1064,148 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LE3-1.c: 24: INTF = 0;
 "24
 [e = _INTF -> -> 0 `i `b ]
-[; ;LE3-1.c: 25: while(RB0){}
 "25
-[e $U 98  ]
-[e :U 99 ]
-{
-}
-[e :U 98 ]
-[e $ _RB0 99  ]
-[e :U 100 ]
-"26
 [v _DATA `uc ~T0 @X0 1 a ]
-[; ;LE3-1.c: 26: unsigned char DATA = PORTD & 0x0F;
+[; ;LE3-1.c: 25: unsigned char DATA = PORTD & 0x0F;
 [e = _DATA -> & -> _PORTD `i -> 15 `i `uc ]
-[; ;LE3-1.c: 27: switch (DATA) {
-"27
-[e $U 102  ]
+[; ;LE3-1.c: 26: switch (DATA) {
+"26
+[e $U 99  ]
 {
-[; ;LE3-1.c: 28: case 0x00: PORTC = 0x01; break;
-"28
-[e :U 103 ]
+[; ;LE3-1.c: 27: case 0x00: PORTC = 0x01; break;
+"27
+[e :U 100 ]
 [e = _PORTC -> -> 1 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 29: case 0x01: PORTC = 0x02; break;
-"29
-[e :U 104 ]
-[e = _PORTC -> -> 2 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 30: case 0x02: PORTC = 0x03; break;
-"30
-[e :U 105 ]
-[e = _PORTC -> -> 3 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 31: case 0x04: PORTC = 0x04; break;
-"31
-[e :U 106 ]
-[e = _PORTC -> -> 4 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 32: case 0x05: PORTC = 0x05; break;
-"32
-[e :U 107 ]
-[e = _PORTC -> -> 5 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 33: case 0x06: PORTC = 0x06; break;
-"33
-[e :U 108 ]
-[e = _PORTC -> -> 6 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 34: case 0x08: PORTC = 0x07; break;
-"34
-[e :U 109 ]
-[e = _PORTC -> -> 7 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 35: case 0x09: PORTC = 0x08; break;
-"35
-[e :U 110 ]
-[e = _PORTC -> -> 8 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 36: case 0x0A: PORTC = 0x09; break;
-"36
-[e :U 111 ]
-[e = _PORTC -> -> 9 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 37: case 0x0D: PORTC = 0x00; break;
-"37
-[e :U 112 ]
-[e = _PORTC -> -> 0 `i `uc ]
-[e $U 101  ]
-[; ;LE3-1.c: 38: default: PORTC = 0x0F; break;
-"38
-[e :U 113 ]
-[e = _PORTC -> -> 15 `i `uc ]
-[e $U 101  ]
-"39
-}
-[; ;LE3-1.c: 39: }
-[e $U 101  ]
-"27
-[e :U 102 ]
-[e [\ _DATA , $ -> -> 0 `i `uc 103
- , $ -> -> 1 `i `uc 104
- , $ -> -> 2 `i `uc 105
- , $ -> -> 4 `i `uc 106
- , $ -> -> 5 `i `uc 107
- , $ -> -> 6 `i `uc 108
- , $ -> -> 8 `i `uc 109
- , $ -> -> 9 `i `uc 110
- , $ -> -> 10 `i `uc 111
- , $ -> -> 13 `i `uc 112
- 113 ]
-"39
+[e $U 98  ]
+[; ;LE3-1.c: 28: case 0x01: PORTC = 0x02; break;
+"28
 [e :U 101 ]
-[; ;LE3-1.c: 40: while(!RB0){}
-"40
-[e $U 114  ]
-[e :U 115 ]
-{
+[e = _PORTC -> -> 2 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 29: case 0x02: PORTC = 0x03; break;
+"29
+[e :U 102 ]
+[e = _PORTC -> -> 3 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 30: case 0x04: PORTC = 0x04; break;
+"30
+[e :U 103 ]
+[e = _PORTC -> -> 4 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 31: case 0x05: PORTC = 0x05; break;
+"31
+[e :U 104 ]
+[e = _PORTC -> -> 5 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 32: case 0x06: PORTC = 0x06; break;
+"32
+[e :U 105 ]
+[e = _PORTC -> -> 6 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 33: case 0x08: PORTC = 0x07; break;
+"33
+[e :U 106 ]
+[e = _PORTC -> -> 7 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 34: case 0x09: PORTC = 0x08; break;
+"34
+[e :U 107 ]
+[e = _PORTC -> -> 8 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 35: case 0x0A: PORTC = 0x09; break;
+"35
+[e :U 108 ]
+[e = _PORTC -> -> 9 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 36: case 0x0D: PORTC = 0x00; break;
+"36
+[e :U 109 ]
+[e = _PORTC -> -> 0 `i `uc ]
+[e $U 98  ]
+[; ;LE3-1.c: 37: default: PORTC = 0x0F; break;
+"37
+[e :U 110 ]
+[e = _PORTC -> -> 15 `i `uc ]
+[e $U 98  ]
+"38
 }
-[e :U 114 ]
-[e $ ! _RB0 115  ]
-[e :U 116 ]
-"41
+[; ;LE3-1.c: 38: }
+[e $U 98  ]
+"26
+[e :U 99 ]
+[e [\ _DATA , $ -> -> 0 `i `uc 100
+ , $ -> -> 1 `i `uc 101
+ , $ -> -> 2 `i `uc 102
+ , $ -> -> 4 `i `uc 103
+ , $ -> -> 5 `i `uc 104
+ , $ -> -> 6 `i `uc 105
+ , $ -> -> 8 `i `uc 106
+ , $ -> -> 9 `i `uc 107
+ , $ -> -> 10 `i `uc 108
+ , $ -> -> 13 `i `uc 109
+ 110 ]
+"38
+[e :U 98 ]
+[; ;LE3-1.c: 39: INTE = 1;
+"39
+[e = _INTE -> -> 1 `i `b ]
+"40
 }
 [e :U 97 ]
-[; ;LE3-1.c: 41: }
-[; ;LE3-1.c: 42: GIE = 1;
-"42
+[; ;LE3-1.c: 40: }
+[; ;LE3-1.c: 41: GIE = 1;
+"41
 [e = _GIE -> -> 1 `i `b ]
-[; ;LE3-1.c: 43: }
-"43
+[; ;LE3-1.c: 42: }
+"42
 [e :UE 96 ]
 }
-"46
+"45
 [v _main `(v ~T0 @X0 1 ef ]
-"47
+"46
 {
-[; ;LE3-1.c: 46: void main(void)
-[; ;LE3-1.c: 47: {
+[; ;LE3-1.c: 45: void main(void)
+[; ;LE3-1.c: 46: {
 [e :U _main ]
 [f ]
-[; ;LE3-1.c: 48: TRISB = 0xFF;
-"48
+[; ;LE3-1.c: 47: TRISB = 0xFF;
+"47
 [e = _TRISB -> -> 255 `i `uc ]
-[; ;LE3-1.c: 49: TRISC = 0x00;
-"49
+[; ;LE3-1.c: 48: TRISC = 0x00;
+"48
 [e = _TRISC -> -> 0 `i `uc ]
-[; ;LE3-1.c: 50: TRISD = 0xFF;
-"50
+[; ;LE3-1.c: 49: TRISD = 0xFF;
+"49
 [e = _TRISD -> -> 255 `i `uc ]
-[; ;LE3-1.c: 52: PORTC = 0x00;
-"52
+[; ;LE3-1.c: 51: PORTC = 0x00;
+"51
 [e = _PORTC -> -> 0 `i `uc ]
-[; ;LE3-1.c: 55: INTEDG = 1;
-"55
+[; ;LE3-1.c: 54: INTEDG = 1;
+"54
 [e = _INTEDG -> -> 1 `i `b ]
-[; ;LE3-1.c: 56: INTF = 0;
-"56
+[; ;LE3-1.c: 55: INTF = 0;
+"55
 [e = _INTF -> -> 0 `i `b ]
-[; ;LE3-1.c: 57: INTE = 1;
-"57
+[; ;LE3-1.c: 56: INTE = 1;
+"56
 [e = _INTE -> -> 1 `i `b ]
-[; ;LE3-1.c: 61: GIE = 1;
-"61
+[; ;LE3-1.c: 60: GIE = 1;
+"60
 [e = _GIE -> -> 1 `i `b ]
-[; ;LE3-1.c: 63: while(1)
+[; ;LE3-1.c: 62: while(1)
+"62
+[e :U 113 ]
+[; ;LE3-1.c: 63: {
 "63
-[e :U 119 ]
-[; ;LE3-1.c: 64: {
-"64
 {
-"66
+"65
 }
-[e :U 118 ]
-"63
-[e $U 119  ]
-[e :U 120 ]
-[; ;LE3-1.c: 66: }
-[; ;LE3-1.c: 68: }
-"68
-[e :UE 117 ]
+[e :U 112 ]
+"62
+[e $U 113  ]
+[e :U 114 ]
+[; ;LE3-1.c: 65: }
+[; ;LE3-1.c: 67: }
+"67
+[e :UE 111 ]
 }

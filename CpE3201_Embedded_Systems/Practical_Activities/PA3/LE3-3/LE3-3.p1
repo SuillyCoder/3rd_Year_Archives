@@ -3,10 +3,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
 "2465
 [v _INTF `Vb ~T0 @X0 0 e@89 ]
-"2511
-[v _RB0 `Vb ~T0 @X0 0 e@48 ]
 "329
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"2461
+[v _INTE `Vb ~T0 @X0 0 e@92 ]
 "2649
 [v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
 [p mainexit ]
@@ -24,8 +24,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PORTC `Vuc ~T0 @X0 0 e@7 ]
 "1217
 [v _OPTION_REG `Vuc ~T0 @X0 0 e@129 ]
-"2461
-[v _INTE `Vb ~T0 @X0 0 e@92 ]
 "2647
 [v _TMR0IE `Vb ~T0 @X0 0 e@93 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
@@ -1127,202 +1125,187 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;LE3-3.c: 28: INTF = 0;
 "28
 [e = _INTF -> -> 0 `i `b ]
-[; ;LE3-3.c: 29: while(RB0){}
 "29
-[e $U 103  ]
-[e :U 104 ]
-{
-}
-[e :U 103 ]
-[e $ _RB0 104  ]
-[e :U 105 ]
-"30
 [v _DATA `uc ~T0 @X0 1 a ]
-[; ;LE3-3.c: 30: unsigned char DATA = PORTD & 0x0F;
+[; ;LE3-3.c: 29: unsigned char DATA = PORTD & 0x0F;
 [e = _DATA -> & -> _PORTD `i -> 15 `i `uc ]
-[; ;LE3-3.c: 31: switch (DATA) {
-"31
-[e $U 107  ]
+[; ;LE3-3.c: 30: switch (DATA) {
+"30
+[e $U 104  ]
 {
-[; ;LE3-3.c: 32: case 0x00: counter = 1; break;
-"32
-[e :U 108 ]
-[e = _counter -> -> 1 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 33: case 0x01: counter = 2; break;
-"33
-[e :U 109 ]
-[e = _counter -> -> 2 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 34: case 0x02: counter = 3; break;
-"34
-[e :U 110 ]
-[e = _counter -> -> 3 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 35: case 0x04: counter = 4; break;
-"35
-[e :U 111 ]
-[e = _counter -> -> 4 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 36: case 0x05: counter = 5; break;
-"36
-[e :U 112 ]
-[e = _counter -> -> 5 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 37: case 0x06: counter = 6; break;
-"37
-[e :U 113 ]
-[e = _counter -> -> 6 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 38: case 0x08: counter = 7; break;
-"38
-[e :U 114 ]
-[e = _counter -> -> 7 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 39: case 0x09: counter = 8; break;
-"39
-[e :U 115 ]
-[e = _counter -> -> 8 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 40: case 0x0A: counter = 9; break;
-"40
-[e :U 116 ]
-[e = _counter -> -> 9 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 41: case 0x0D: counter = 0; break;
-"41
-[e :U 117 ]
+[; ;LE3-3.c: 31: case 0x00: counter = 0; break;
+"31
+[e :U 105 ]
 [e = _counter -> -> 0 `i `uc ]
-[e $U 106  ]
-[; ;LE3-3.c: 42: default: break;
-"42
-[e :U 118 ]
-[e $U 106  ]
-"43
-}
-[; ;LE3-3.c: 43: }
-[e $U 106  ]
-"31
-[e :U 107 ]
-[e [\ _DATA , $ -> -> 0 `i `uc 108
- , $ -> -> 1 `i `uc 109
- , $ -> -> 2 `i `uc 110
- , $ -> -> 4 `i `uc 111
- , $ -> -> 5 `i `uc 112
- , $ -> -> 6 `i `uc 113
- , $ -> -> 8 `i `uc 114
- , $ -> -> 9 `i `uc 115
- , $ -> -> 10 `i `uc 116
- , $ -> -> 13 `i `uc 117
- 118 ]
-"43
+[e $U 103  ]
+[; ;LE3-3.c: 32: case 0x01: counter = 1; break;
+"32
 [e :U 106 ]
-[; ;LE3-3.c: 44: while(!RB0){}
+[e = _counter -> -> 1 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 33: case 0x02: counter = 2; break;
+"33
+[e :U 107 ]
+[e = _counter -> -> 2 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 34: case 0x04: counter = 3; break;
+"34
+[e :U 108 ]
+[e = _counter -> -> 3 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 35: case 0x05: counter = 4; break;
+"35
+[e :U 109 ]
+[e = _counter -> -> 4 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 36: case 0x06: counter = 5; break;
+"36
+[e :U 110 ]
+[e = _counter -> -> 5 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 37: case 0x08: counter = 6; break;
+"37
+[e :U 111 ]
+[e = _counter -> -> 6 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 38: case 0x09: counter = 7; break;
+"38
+[e :U 112 ]
+[e = _counter -> -> 7 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 39: case 0x0A: counter = 8; break;
+"39
+[e :U 113 ]
+[e = _counter -> -> 8 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 40: case 0x0D: counter = 9; break;
+"40
+[e :U 114 ]
+[e = _counter -> -> 9 `i `uc ]
+[e $U 103  ]
+[; ;LE3-3.c: 41: default: break;
+"41
+[e :U 115 ]
+[e $U 103  ]
+"42
+}
+[; ;LE3-3.c: 42: }
+[e $U 103  ]
+"30
+[e :U 104 ]
+[e [\ _DATA , $ -> -> 0 `i `uc 105
+ , $ -> -> 1 `i `uc 106
+ , $ -> -> 2 `i `uc 107
+ , $ -> -> 4 `i `uc 108
+ , $ -> -> 5 `i `uc 109
+ , $ -> -> 6 `i `uc 110
+ , $ -> -> 8 `i `uc 111
+ , $ -> -> 9 `i `uc 112
+ , $ -> -> 10 `i `uc 113
+ , $ -> -> 13 `i `uc 114
+ 115 ]
+"42
+[e :U 103 ]
+[; ;LE3-3.c: 43: INTE = 1;
+"43
+[e = _INTE -> -> 1 `i `b ]
 "44
-[e $U 119  ]
-[e :U 120 ]
-{
 }
-[e :U 119 ]
-[e $ ! _RB0 120  ]
-[e :U 121 ]
+[; ;LE3-3.c: 44: }
+[e $U 116  ]
 "45
-}
-[; ;LE3-3.c: 45: }
-[e $U 122  ]
-"46
 [e :U 102 ]
-[; ;LE3-3.c: 46: else if (TMR0IF) {
-[e $ ! _TMR0IF 123  ]
+[; ;LE3-3.c: 45: else if (TMR0IF) {
+[e $ ! _TMR0IF 117  ]
 {
-[; ;LE3-3.c: 47: TMR0IF = 0;
-"47
+[; ;LE3-3.c: 46: TMR0IF = 0;
+"46
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;LE3-3.c: 48: myTMR0IF = 1;
-"48
+[; ;LE3-3.c: 47: myTMR0IF = 1;
+"47
 [e = _myTMR0IF -> -> 1 `i `b ]
-"49
+"48
 }
-[e :U 123 ]
-"50
-[e :U 122 ]
-[; ;LE3-3.c: 49: }
-[; ;LE3-3.c: 50: GIE = 1;
+[e :U 117 ]
+"49
+[e :U 116 ]
+[; ;LE3-3.c: 48: }
+[; ;LE3-3.c: 49: GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-[; ;LE3-3.c: 51: }
-"51
+[; ;LE3-3.c: 50: }
+"50
 [e :UE 101 ]
 }
-"53
+"52
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;LE3-3.c: 53: void main(void) {
+[; ;LE3-3.c: 52: void main(void) {
 [e :U _main ]
 [f ]
-[; ;LE3-3.c: 54: TRISA = 0x00;
-"54
+[; ;LE3-3.c: 53: TRISA = 0x00;
+"53
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;LE3-3.c: 55: TRISB = 0xFF;
-"55
+[; ;LE3-3.c: 54: TRISB = 0xFF;
+"54
 [e = _TRISB -> -> 255 `i `uc ]
-[; ;LE3-3.c: 56: TRISC = 0x00;
-"56
+[; ;LE3-3.c: 55: TRISC = 0x00;
+"55
 [e = _TRISC -> -> 0 `i `uc ]
-[; ;LE3-3.c: 57: TRISD = 0xFF;
-"57
+[; ;LE3-3.c: 56: TRISD = 0xFF;
+"56
 [e = _TRISD -> -> 255 `i `uc ]
-[; ;LE3-3.c: 59: PORTA = 0x00;
-"59
+[; ;LE3-3.c: 58: PORTA = 0x00;
+"58
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;LE3-3.c: 60: PORTC = 0x00;
-"60
+[; ;LE3-3.c: 59: PORTC = 0x00;
+"59
 [e = _PORTC -> -> 0 `i `uc ]
-[; ;LE3-3.c: 64: OPTION_REG = 0xC4;
+[; ;LE3-3.c: 63: OPTION_REG = 0x44;
+"63
+[e = _OPTION_REG -> -> 68 `i `uc ]
+[; ;LE3-3.c: 64: INTF = 0;
 "64
-[e = _OPTION_REG -> -> 196 `i `uc ]
-[; ;LE3-3.c: 65: INTF = 0;
-"65
 [e = _INTF -> -> 0 `i `b ]
-[; ;LE3-3.c: 66: INTE = 1;
-"66
+[; ;LE3-3.c: 65: INTE = 1;
+"65
 [e = _INTE -> -> 1 `i `b ]
-[; ;LE3-3.c: 67: TMR0IF = 0;
-"67
+[; ;LE3-3.c: 66: TMR0IF = 0;
+"66
 [e = _TMR0IF -> -> 0 `i `b ]
-[; ;LE3-3.c: 68: TMR0IE = 1;
-"68
+[; ;LE3-3.c: 67: TMR0IE = 1;
+"67
 [e = _TMR0IE -> -> 1 `i `b ]
-[; ;LE3-3.c: 69: GIE = 1;
-"69
+[; ;LE3-3.c: 68: GIE = 1;
+"68
 [e = _GIE -> -> 1 `i `b ]
-[; ;LE3-3.c: 71: while (1) {
-"71
-[e :U 126 ]
+[; ;LE3-3.c: 70: while (1) {
+"70
+[e :U 120 ]
 {
-[; ;LE3-3.c: 72: PORTC = counter;
-"72
-[e = _PORTC _counter ]
-[; ;LE3-3.c: 73: delay(98);
-"73
-[e ( _delay (1 -> 98 `i ]
-[; ;LE3-3.c: 74: counter++;
-"74
-[e ++ _counter -> -> 1 `i `uc ]
-[; ;LE3-3.c: 75: if (counter > 9)
-"75
-[e $ ! > -> _counter `i -> 9 `i 128  ]
-[; ;LE3-3.c: 76: counter = 0;
-"76
-[e = _counter -> -> 0 `i `uc ]
-[e :U 128 ]
-"77
-}
-[e :U 125 ]
+[; ;LE3-3.c: 71: PORTC = counter;
 "71
-[e $U 126  ]
-[e :U 127 ]
+[e = _PORTC _counter ]
+[; ;LE3-3.c: 72: delay(98);
+"72
+[e ( _delay (1 -> 98 `i ]
+[; ;LE3-3.c: 73: counter++;
+"73
+[e ++ _counter -> -> 1 `i `uc ]
+[; ;LE3-3.c: 74: if (counter > 9)
+"74
+[e $ ! > -> _counter `i -> 9 `i 122  ]
+[; ;LE3-3.c: 75: counter = 0;
+"75
+[e = _counter -> -> 0 `i `uc ]
+[e :U 122 ]
+"76
+}
+[e :U 119 ]
+"70
+[e $U 120  ]
+[e :U 121 ]
+[; ;LE3-3.c: 76: }
 [; ;LE3-3.c: 77: }
-[; ;LE3-3.c: 78: }
-"78
-[e :UE 124 ]
+"77
+[e :UE 118 ]
 }

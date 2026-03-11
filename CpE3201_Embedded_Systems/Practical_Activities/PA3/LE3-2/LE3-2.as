@@ -179,8 +179,6 @@ _INTE	set	0x5C
 _INTF	set	0x59
 	global	_RA0
 _RA0	set	0x28
-	global	_RB0
-_RB0	set	0x30
 	global	_TMR0IE
 _TMR0IE	set	0x5D
 	global	_TMR0IF
@@ -340,10 +338,10 @@ delay@of_cnt:	; 2 bytes @ 0x2
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (0) _main                                                 0     0      0     133
+;! (0) _main                                                 0     0      0     198
 ;!                              _delay
 ;! ---------------------------------------------------------------------------------
-;! (1) _delay                                                5     3      2     133
+;! (1) _delay                                                5     3      2     198
 ;!                                              6 COMMON     1     1      0
 ;!                                              0 BANK0      4     2      2
 ;! ---------------------------------------------------------------------------------
@@ -397,7 +395,7 @@ delay@of_cnt:	; 2 bytes @ 0x2
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 52 in file "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c"
+;;		line 51 in file "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -425,12 +423,12 @@ delay@of_cnt:	; 2 bytes @ 0x2
 ;;
 psect	maintext,global,class=CODE,delta=2,split=1
 	file	"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c"
-	line	52
+	line	51
 global __pmaintext
 __pmaintext:	;psect for function _main
 psect	maintext
 	file	"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c"
-	line	52
+	line	51
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
@@ -438,109 +436,119 @@ _main:
 ;incstack = 0
 	opt	stack 6
 ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-	line	53
+	line	52
 	
-l631:	
-;LE3-2.c: 53: TRISA = 0x00;
+l627:	
+;LE3-2.c: 52: TRISA = 0x00;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(133)^080h	;volatile
-	line	54
+	line	53
 	
-l633:	
-;LE3-2.c: 54: TRISB = 0xFF;
+l629:	
+;LE3-2.c: 53: TRISB = 0xFF;
 	movlw	(0FFh)
 	movwf	(134)^080h	;volatile
-	line	55
+	line	54
 	
-l635:	
-;LE3-2.c: 55: TRISC = 0x00;
+l631:	
+;LE3-2.c: 54: TRISC = 0x00;
 	clrf	(135)^080h	;volatile
-	line	56
-;LE3-2.c: 56: TRISD = 0xFF;
+	line	55
+;LE3-2.c: 55: TRISD = 0xFF;
 	movlw	(0FFh)
 	movwf	(136)^080h	;volatile
-	line	58
+	line	57
 	
-l637:	
-;LE3-2.c: 58: PORTA = 0x00;
+l633:	
+;LE3-2.c: 57: PORTA = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(5)	;volatile
-	line	59
+	line	58
 	
-l639:	
-;LE3-2.c: 59: PORTC = 0x00;
+l635:	
+;LE3-2.c: 58: PORTC = 0x00;
 	clrf	(7)	;volatile
-	line	61
-;LE3-2.c: 61: OPTION_REG = 0xC4;
+	line	60
+;LE3-2.c: 60: OPTION_REG = 0xC4;
 	movlw	(0C4h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(129)^080h	;volatile
+	line	63
+	
+l637:	
+;LE3-2.c: 63: INTF = 0;
+	bcf	(89/8),(89)&7	;volatile
 	line	64
 	
-l641:	
-;LE3-2.c: 64: INTF = 0;
-	bcf	(89/8),(89)&7	;volatile
-	line	65
-	
-l643:	
-;LE3-2.c: 65: INTE = 1;
+l639:	
+;LE3-2.c: 64: INTE = 1;
 	bsf	(92/8),(92)&7	;volatile
+	line	67
+	
+l641:	
+;LE3-2.c: 67: TMR0IF = 0;
+	bcf	(90/8),(90)&7	;volatile
 	line	68
 	
+l643:	
+;LE3-2.c: 68: TMR0IE = 1;
+	bsf	(93/8),(93)&7	;volatile
+	line	71
+	
 l645:	
-;LE3-2.c: 68: TMR0IF = 0;
-	bcf	(90/8),(90)&7	;volatile
-	line	69
+;LE3-2.c: 71: GIE = 1;
+	bsf	(95/8),(95)&7	;volatile
+	goto	l647
+	line	73
+;LE3-2.c: 73: while (1) {
+	
+l59:	
+	line	74
 	
 l647:	
-;LE3-2.c: 69: TMR0IE = 1;
-	bsf	(93/8),(93)&7	;volatile
-	line	72
-	
-l649:	
-;LE3-2.c: 72: GIE = 1;
-	bsf	(95/8),(95)&7	;volatile
-	goto	l651
-	line	74
-;LE3-2.c: 74: while (1) {
-	
-l67:	
+;LE3-2.c: 74: RA0 = 1;
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	bsf	(40/8),(40)&7	;volatile
 	line	75
 	
-l651:	
-;LE3-2.c: 75: RA0 = 0x01;
-	bcf	status, 5	;RP0=0, select bank0
-	bsf	(40/8),(40)&7	;volatile
-	line	76
-	
-l653:	
-;LE3-2.c: 76: delay(122);
+l649:	
+;LE3-2.c: 75: delay(122);
 	movlw	low(07Ah)
 	movwf	(delay@cnt)
 	movlw	high(07Ah)
 	movwf	((delay@cnt))+1
 	fcall	_delay
-	line	77
+	line	76
 	
-l655:	
-;LE3-2.c: 77: RA0 = 0x00;
+l651:	
+;LE3-2.c: 76: RA0 = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	bcf	(40/8),(40)&7	;volatile
-	goto	l651
+	line	77
+	
+l653:	
+;LE3-2.c: 77: delay(122);
+	movlw	low(07Ah)
+	movwf	(delay@cnt)
+	movlw	high(07Ah)
+	movwf	((delay@cnt))+1
+	fcall	_delay
+	goto	l647
+	line	78
+	
+l60:	
+	line	73
+	goto	l647
+	
+l61:	
 	line	79
 	
-l68:	
-	line	74
-	goto	l651
-	
-l69:	
-	line	80
-	
-l70:	
+l62:	
 	global	start
 	ljmp	start
 	opt stack 0
@@ -594,7 +602,7 @@ _delay:
 ; Regs used in _delay: [wreg+status,2]
 	line	15
 	
-l625:	
+l621:	
 ;LE3-2.c: 15: int of_cnt = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -602,20 +610,20 @@ l625:
 	clrf	(delay@of_cnt+1)
 	line	16
 ;LE3-2.c: 16: while (of_cnt < cnt) {
-	goto	l35
+	goto	l33
 	
-l36:	
+l34:	
 	line	17
 ;LE3-2.c: 17: if (myTMR0IF) {
 	btfss	(_myTMR0IF/8),(_myTMR0IF)&7	;volatile
-	goto	u91
-	goto	u90
-u91:
-	goto	l35
-u90:
+	goto	u71
+	goto	u70
+u71:
+	goto	l33
+u70:
 	line	18
 	
-l627:	
+l623:	
 ;LE3-2.c: 18: of_cnt++;
 	movlw	low(01h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -627,16 +635,16 @@ l627:
 	addwf	(delay@of_cnt+1),f
 	line	19
 	
-l629:	
+l625:	
 ;LE3-2.c: 19: myTMR0IF = 0;
 	bcf	(_myTMR0IF/8),(_myTMR0IF)&7	;volatile
-	goto	l35
+	goto	l33
 	line	20
 	
-l37:	
+l35:	
 	line	21
 	
-l35:	
+l33:	
 	line	16
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -647,23 +655,23 @@ l35:
 	xorlw	80h
 	subwf	(??_delay+0)+0,w
 	skipz
-	goto	u105
+	goto	u85
 	movf	(delay@cnt),w
 	subwf	(delay@of_cnt),w
-u105:
+u85:
 
 	skipc
-	goto	u101
-	goto	u100
-u101:
-	goto	l36
-u100:
-	goto	l39
+	goto	u81
+	goto	u80
+u81:
+	goto	l34
+u80:
+	goto	l37
 	
-l38:	
+l36:	
 	line	22
 	
-l39:	
+l37:	
 	return
 	opt stack 0
 GLOBAL	__end_of_delay
@@ -735,7 +743,7 @@ interrupt_function:
 psect	text2
 	line	25
 	
-i1l533:	
+i1l525:	
 ;LE3-2.c: 25: GIE = 0;
 	bcf	(95/8),(95)&7	;volatile
 	line	26
@@ -744,149 +752,133 @@ i1l533:
 	goto	u3_21
 	goto	u3_20
 u3_21:
-	goto	i1l42
+	goto	i1l40
 u3_20:
 	line	27
 	
-i1l535:	
+i1l527:	
 ;LE3-2.c: 27: INTF = 0;
 	bcf	(89/8),(89)&7	;volatile
 	line	28
-;LE3-2.c: 28: while(RB0){}
-	goto	i1l43
 	
-i1l44:	
-	
-i1l43:	
-	btfsc	(48/8),(48)&7	;volatile
-	goto	u4_21
-	goto	u4_20
-u4_21:
-	goto	i1l43
-u4_20:
-	goto	i1l537
-	
-i1l45:	
-	line	29
-	
-i1l537:	
-;LE3-2.c: 29: unsigned char DATA = PORTD & 0x0F;
+i1l529:	
+;LE3-2.c: 28: unsigned char DATA = PORTD & 0x0F;
 	movf	(8),w	;volatile
 	andlw	0Fh
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(ISR@DATA)
+	line	29
+;LE3-2.c: 29: switch (DATA) {
+	goto	i1l555
 	line	30
-;LE3-2.c: 30: switch (DATA) {
-	goto	i1l563
+;LE3-2.c: 30: case 0x00: PORTC = 0x01; break;
+	
+i1l42:	
+	
+i1l531:	
+	movlw	(01h)
+	movwf	(7)	;volatile
+	goto	i1l43
 	line	31
-;LE3-2.c: 31: case 0x00: PORTC = 0x01; break;
+;LE3-2.c: 31: case 0x01: PORTC = 0x02; break;
+	
+i1l44:	
+	
+i1l533:	
+	movlw	(02h)
+	movwf	(7)	;volatile
+	goto	i1l43
+	line	32
+;LE3-2.c: 32: case 0x02: PORTC = 0x03; break;
+	
+i1l45:	
+	
+i1l535:	
+	movlw	(03h)
+	movwf	(7)	;volatile
+	goto	i1l43
+	line	33
+;LE3-2.c: 33: case 0x04: PORTC = 0x04; break;
+	
+i1l46:	
+	
+i1l537:	
+	movlw	(04h)
+	movwf	(7)	;volatile
+	goto	i1l43
+	line	34
+;LE3-2.c: 34: case 0x05: PORTC = 0x05; break;
 	
 i1l47:	
 	
 i1l539:	
-	movlw	(01h)
+	movlw	(05h)
 	movwf	(7)	;volatile
-	goto	i1l59
-	line	32
-;LE3-2.c: 32: case 0x01: PORTC = 0x02; break;
+	goto	i1l43
+	line	35
+;LE3-2.c: 35: case 0x06: PORTC = 0x06; break;
+	
+i1l48:	
+	
+i1l541:	
+	movlw	(06h)
+	movwf	(7)	;volatile
+	goto	i1l43
+	line	36
+;LE3-2.c: 36: case 0x08: PORTC = 0x07; break;
 	
 i1l49:	
 	
-i1l541:	
-	movlw	(02h)
+i1l543:	
+	movlw	(07h)
 	movwf	(7)	;volatile
-	goto	i1l59
-	line	33
-;LE3-2.c: 33: case 0x02: PORTC = 0x03; break;
+	goto	i1l43
+	line	37
+;LE3-2.c: 37: case 0x09: PORTC = 0x08; break;
 	
 i1l50:	
 	
-i1l543:	
-	movlw	(03h)
+i1l545:	
+	movlw	(08h)
 	movwf	(7)	;volatile
-	goto	i1l59
-	line	34
-;LE3-2.c: 34: case 0x04: PORTC = 0x04; break;
+	goto	i1l43
+	line	38
+;LE3-2.c: 38: case 0x0A: PORTC = 0x09; break;
 	
 i1l51:	
 	
-i1l545:	
-	movlw	(04h)
+i1l547:	
+	movlw	(09h)
 	movwf	(7)	;volatile
-	goto	i1l59
-	line	35
-;LE3-2.c: 35: case 0x05: PORTC = 0x05; break;
+	goto	i1l43
+	line	39
+;LE3-2.c: 39: case 0x0D: PORTC = 0x00; break;
 	
 i1l52:	
 	
-i1l547:	
-	movlw	(05h)
-	movwf	(7)	;volatile
-	goto	i1l59
-	line	36
-;LE3-2.c: 36: case 0x06: PORTC = 0x06; break;
+i1l549:	
+	clrf	(7)	;volatile
+	goto	i1l43
+	line	40
+;LE3-2.c: 40: default: PORTC = 0x0F; break;
 	
 i1l53:	
 	
-i1l549:	
-	movlw	(06h)
-	movwf	(7)	;volatile
-	goto	i1l59
-	line	37
-;LE3-2.c: 37: case 0x08: PORTC = 0x07; break;
-	
-i1l54:	
-	
 i1l551:	
-	movlw	(07h)
-	movwf	(7)	;volatile
-	goto	i1l59
-	line	38
-;LE3-2.c: 38: case 0x09: PORTC = 0x08; break;
-	
-i1l55:	
-	
-i1l553:	
-	movlw	(08h)
-	movwf	(7)	;volatile
-	goto	i1l59
-	line	39
-;LE3-2.c: 39: case 0x0A: PORTC = 0x09; break;
-	
-i1l56:	
-	
-i1l555:	
-	movlw	(09h)
-	movwf	(7)	;volatile
-	goto	i1l59
-	line	40
-;LE3-2.c: 40: case 0x0D: PORTC = 0x00; break;
-	
-i1l57:	
-	
-i1l557:	
-	clrf	(7)	;volatile
-	goto	i1l59
-	line	41
-;LE3-2.c: 41: default: PORTC = 0x0F; break;
-	
-i1l58:	
-	
-i1l559:	
 	movlw	(0Fh)
 	movwf	(7)	;volatile
-	goto	i1l59
-	line	42
+	goto	i1l43
+	line	41
 	
-i1l561:	
-;LE3-2.c: 42: }
-	goto	i1l59
-	line	30
+i1l553:	
+;LE3-2.c: 41: }
+	goto	i1l43
+	line	29
 	
-i1l46:	
+i1l41:	
 	
-i1l563:	
+i1l555:	
 	movf	(ISR@DATA),w
 	; Switch size 1, requested type "space"
 ; Number of cases is 10, Range of values is 0 to 13
@@ -900,90 +892,77 @@ i1l563:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	i1l539
+	goto	i1l531
 	xorlw	1^0	; case 1
 	skipnz
-	goto	i1l541
+	goto	i1l533
 	xorlw	2^1	; case 2
 	skipnz
-	goto	i1l543
+	goto	i1l535
 	xorlw	4^2	; case 4
 	skipnz
-	goto	i1l545
+	goto	i1l537
 	xorlw	5^4	; case 5
 	skipnz
-	goto	i1l547
+	goto	i1l539
 	xorlw	6^5	; case 6
 	skipnz
-	goto	i1l549
+	goto	i1l541
 	xorlw	8^6	; case 8
 	skipnz
-	goto	i1l551
+	goto	i1l543
 	xorlw	9^8	; case 9
 	skipnz
-	goto	i1l553
+	goto	i1l545
 	xorlw	10^9	; case 10
 	skipnz
-	goto	i1l555
+	goto	i1l547
 	xorlw	13^10	; case 13
 	skipnz
-	goto	i1l557
-	goto	i1l559
+	goto	i1l549
+	goto	i1l551
 	opt asmopt_on
 
+	line	41
+	
+i1l43:	
 	line	42
-	
-i1l48:	
+;LE3-2.c: 42: INTE = 1;
+	bsf	(92/8),(92)&7	;volatile
 	line	43
-;LE3-2.c: 43: while(!RB0){}
-	goto	i1l59
-	
-i1l60:	
-	
-i1l59:	
-	btfss	(48/8),(48)&7	;volatile
-	goto	u5_21
-	goto	u5_20
-u5_21:
-	goto	i1l59
-u5_20:
-	goto	i1l62
-	
-i1l61:	
+;LE3-2.c: 43: }
+	goto	i1l54
 	line	44
-;LE3-2.c: 44: }
-	goto	i1l62
+	
+i1l40:	
+;LE3-2.c: 44: else if (TMR0IF) {
+	btfss	(90/8),(90)&7	;volatile
+	goto	u4_21
+	goto	u4_20
+u4_21:
+	goto	i1l54
+u4_20:
 	line	45
 	
-i1l42:	
-;LE3-2.c: 45: else if (TMR0IF) {
-	btfss	(90/8),(90)&7	;volatile
-	goto	u6_21
-	goto	u6_20
-u6_21:
-	goto	i1l62
-u6_20:
-	line	46
-	
-i1l565:	
-;LE3-2.c: 46: TMR0IF = 0;
+i1l557:	
+;LE3-2.c: 45: TMR0IF = 0;
 	bcf	(90/8),(90)&7	;volatile
-	line	47
-;LE3-2.c: 47: myTMR0IF = 1;
+	line	46
+;LE3-2.c: 46: myTMR0IF = 1;
 	bsf	(_myTMR0IF/8),(_myTMR0IF)&7	;volatile
-	goto	i1l62
+	goto	i1l54
+	line	47
+	
+i1l55:	
 	line	48
 	
-i1l63:	
+i1l54:	
+;LE3-2.c: 47: }
+;LE3-2.c: 48: GIE = 1;
+	bsf	(95/8),(95)&7	;volatile
 	line	49
 	
-i1l62:	
-;LE3-2.c: 48: }
-;LE3-2.c: 49: GIE = 1;
-	bsf	(95/8),(95)&7	;volatile
-	line	50
-	
-i1l64:	
+i1l56:	
 	movf	(??_ISR+4),w
 	movwf	btemp+1
 	movf	(??_ISR+3),w

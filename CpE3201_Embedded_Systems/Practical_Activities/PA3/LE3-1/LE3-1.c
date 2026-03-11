@@ -22,7 +22,6 @@ void interrupt ISR() {
     GIE = 0;
     if (INTF) {
         INTF = 0;
-        while(RB0){}        // wait for DA to stabilize (active low at RB0)
         unsigned char DATA = PORTD & 0x0F;
         switch (DATA) {
             case 0x00: PORTC = 0x01; break; // 1
@@ -37,7 +36,7 @@ void interrupt ISR() {
             case 0x0D: PORTC = 0x00; break; // 0
             default:   PORTC = 0x0F; break;
         }
-        while(!RB0){}       // wait for key release
+        INTE = 1;
     }
     GIE = 1;
 }

@@ -18,9 +18,9 @@ config CONFIG 0 2007 2007 1 2
 $LE3-2.obj
 cinit CODE 0 15 15 5 2
 intentry CODE 0 4 4 E 2
-text2 CODE 0 1A 1A 56 2
-text1 CODE 0 94 94 1E 2
-maintext CODE 0 70 70 24 2
+text2 CODE 0 1A 1A 53 2
+text1 CODE 0 9B 9B 1E 2
+maintext CODE 0 6D 6D 2E 2
 cstackBANK0 BANK0 1 20 20 4 1
 cstackCOMMON COMMON 1 70 70 7 1
 bitbssCOMMON COMMON 1 3B8 77 1 1
@@ -35,13 +35,13 @@ BANK1 00A0-00EF 1
 BANK2 0110-016F 1
 BANK3 0190-01EF 1
 CODE 0003-0003 2
-CODE 00B2-1FFF 2
+CODE 00B9-1FFF 2
 COMMON 0078-007D 1
 CONST 0003-0003 2
-CONST 00B2-1FFF 2
+CONST 00B9-1FFF 2
 EEDATA 2100-21FF 2
 ENTRY 0003-0003 2
-ENTRY 00B2-1FFF 2
+ENTRY 00B9-1FFF 2
 IDLOC 2000-2003 2
 RAM 0024-006F 1
 RAM 00A0-00EF 1
@@ -53,9 +53,9 @@ SFR2 0100-010F 1
 SFR3 0180-018F 1
 STACK 0110-016F 1
 STRCODE 0003-0003 2
-STRCODE 00B2-1FFF 2
+STRCODE 00B9-1FFF 2
 STRING 0003-0003 2
-STRING 00B2-1FFF 2
+STRING 00B9-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -72,19 +72,19 @@ STRING 00B2-1FFF 2
 $LE3-2.obj
 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h":2761 0 text0 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":24 4 intentry CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":224 15 cinit CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":227 15 cinit CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":237 15 cinit CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":243 16 cinit CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":244 16 cinit CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":245 17 cinit CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":222 15 cinit CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":225 15 cinit CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":235 15 cinit CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":241 16 cinit CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":242 16 cinit CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.as":243 17 cinit CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":24 1A text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":25 1A text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":26 1B text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":27 1D text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":28 1E text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":29 20 text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":30 25 text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":29 23 text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":30 24 text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":31 26 text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":32 28 text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":33 2A text2 CODE
@@ -96,39 +96,41 @@ $LE3-2.obj
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":39 36 text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":40 38 text2 CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":41 3A text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":42 3C text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":30 3D text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":43 5D text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":45 60 text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":46 62 text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":47 63 text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":49 64 text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":50 65 text2 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":52 70 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":29 3B text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":41 5B text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":42 5B text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":43 5C text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":44 5D text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":45 5F text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":46 60 text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":48 61 text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":49 62 text2 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":51 6D maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":52 6D maintext CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":53 70 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":54 73 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":55 75 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":56 76 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":54 72 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":55 73 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":57 75 maintext CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":58 78 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":59 7B maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":61 7C maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":64 80 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":65 81 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":68 82 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":69 83 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":72 84 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":60 79 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":63 7D maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":64 7E maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":67 7F maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":68 80 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":71 81 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":74 82 maintext CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":75 85 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":76 87 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":77 90 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":74 93 maintext CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":14 94 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":15 94 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":16 98 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":21 98 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":17 A6 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":18 A8 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":19 B0 text1 CODE
-"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":16 B1 text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":76 8E maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":77 91 maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":73 9A maintext CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":14 9B text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":15 9B text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":16 9F text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":21 9F text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":17 AD text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":18 AF text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":19 B7 text1 CODE
+"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\LE3-2.c":16 B8 text1 CODE
 $startup.obj
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\startup.as":39 0 functab CODE
 "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-2\startup.as":40 0 functab CODE
@@ -154,7 +156,6 @@ $startup.obj
 %SYMTAB
 __CFG_WRT$OFF 0 0 ABS 0 - LE3-2.obj
 _RA0 28 0 ABS 0 - LE3-2.obj
-_RB0 30 0 ABS 0 - LE3-2.obj
 __S0 2008 0 ABS 0 - -
 __S1 78 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
@@ -168,7 +169,7 @@ __pintentry 8 0 CODE 0 intentry LE3-2.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - LE3-2.obj
 _INTE 5C 0 ABS 0 - LE3-2.obj
 _INTF 59 0 ABS 0 - LE3-2.obj
-_main E0 0 CODE 0 maintext LE3-2.obj
+_main DA 0 CODE 0 maintext LE3-2.obj
 ___sp 0 0 STACK 2 stack startup.obj
 btemp 7E 0 ABS 0 - LE3-2.obj
 ltemp 7E 0 ABS 0 - LE3-2.obj
@@ -198,15 +199,15 @@ wtemp3 84 0 ABS 0 - LE3-2.obj
 ttemp4 7F 0 ABS 0 - LE3-2.obj
 wtemp4 86 0 ABS 0 - LE3-2.obj
 wtemp5 88 0 ABS 0 - LE3-2.obj
-__end_of_delay 164 0 CODE 0 text1 LE3-2.obj
+__end_of_delay 172 0 CODE 0 text1 LE3-2.obj
 wtemp6 7F 0 ABS 0 - LE3-2.obj
 interrupt_function 8 0 CODE 0 intentry LE3-2.obj
 __Hconfig 4010 0 CONFIG 0 config -
 __Lconfig 400E 0 CONFIG 0 config -
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_delay 128 0 CODE 0 text1 LE3-2.obj
-__end_of_ISR E0 0 CODE 0 text2 LE3-2.obj
+_delay 136 0 CODE 0 text1 LE3-2.obj
+__end_of_ISR DA 0 CODE 0 text2 LE3-2.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Lfunctab 0 0 CODE 0 functab -
 delay@cnt 20 0 BANK0 1 cstackBANK0 LE3-2.obj
@@ -239,7 +240,7 @@ stacklo 0 0 ABS 0 - startup.obj
 saved_w 7E 0 ABS 0 - LE3-2.obj
 __Hinit 24 0 CODE 0 init -
 __Linit 24 0 CODE 0 init -
-__end_of_main 128 0 CODE 0 maintext LE3-2.obj
+__end_of_main 136 0 CODE 0 maintext LE3-2.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
 end_of_initialization 2C 0 CODE 0 cinit LE3-2.obj
@@ -260,7 +261,7 @@ ___latbits 2 0 ABS 0 - LE3-2.obj
 __Hpowerup 0 0 CODE 0 powerup -
 __Lpowerup 0 0 CODE 0 powerup -
 __ptext0 0 0 CODE 0 text0 LE3-2.obj
-__ptext1 128 0 CODE 0 text1 LE3-2.obj
+__ptext1 136 0 CODE 0 text1 LE3-2.obj
 __ptext2 34 0 CODE 0 text2 LE3-2.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -300,7 +301,7 @@ __CFG_CPD$OFF 0 0 ABS 0 - LE3-2.obj
 start_initialization 2A 0 CODE 0 cinit LE3-2.obj
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
-__pmaintext E0 0 CODE 0 maintext LE3-2.obj
+__pmaintext DA 0 CODE 0 maintext LE3-2.obj
 __initialization 2A 0 CODE 0 cinit LE3-2.obj
 __HbitbssCOMMON 0 0 ABS 0 bitbssCOMMON -
 __LbitbssCOMMON 0 0 ABS 0 bitbssCOMMON -
@@ -333,7 +334,7 @@ __CFG_LVP$OFF 0 0 ABS 0 - LE3-2.obj
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 3 2
-intentry 0 4 8 AE 2
+intentry 0 4 8 B5 2
 config 0 2007 400E 1 2
 cstackCOMMON 1 70 70 8 1
 cstackBANK0 1 20 20 4 1

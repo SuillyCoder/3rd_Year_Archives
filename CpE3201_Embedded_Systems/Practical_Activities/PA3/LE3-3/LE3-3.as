@@ -178,8 +178,6 @@ _GIE	set	0x5F
 _INTE	set	0x5C
 	global	_INTF
 _INTF	set	0x59
-	global	_RB0
-_RB0	set	0x30
 	global	_TMR0IE
 _TMR0IE	set	0x5D
 	global	_TMR0IF
@@ -406,7 +404,7 @@ delay@of_cnt:	; 2 bytes @ 0x3
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 53 in file "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-3\LE3-3.c"
+;;		line 52 in file "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-3\LE3-3.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -434,12 +432,12 @@ delay@of_cnt:	; 2 bytes @ 0x3
 ;;
 psect	maintext,global,class=CODE,delta=2,split=1
 	file	"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-3\LE3-3.c"
-	line	53
+	line	52
 global __pmaintext
 __pmaintext:	;psect for function _main
 psect	maintext
 	file	"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-3\LE3-3.c"
-	line	53
+	line	52
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
@@ -447,130 +445,130 @@ _main:
 ;incstack = 0
 	opt	stack 6
 ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
-	line	54
+	line	53
 	
-l634:	
-;LE3-3.c: 54: TRISA = 0x00;
+l626:	
+;LE3-3.c: 53: TRISA = 0x00;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	clrf	(133)^080h	;volatile
-	line	55
+	line	54
 	
-l636:	
-;LE3-3.c: 55: TRISB = 0xFF;
+l628:	
+;LE3-3.c: 54: TRISB = 0xFF;
 	movlw	(0FFh)
 	movwf	(134)^080h	;volatile
-	line	56
+	line	55
 	
-l638:	
-;LE3-3.c: 56: TRISC = 0x00;
+l630:	
+;LE3-3.c: 55: TRISC = 0x00;
 	clrf	(135)^080h	;volatile
-	line	57
-;LE3-3.c: 57: TRISD = 0xFF;
+	line	56
+;LE3-3.c: 56: TRISD = 0xFF;
 	movlw	(0FFh)
 	movwf	(136)^080h	;volatile
-	line	59
+	line	58
 	
-l640:	
-;LE3-3.c: 59: PORTA = 0x00;
+l632:	
+;LE3-3.c: 58: PORTA = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(5)	;volatile
-	line	60
+	line	59
 	
-l642:	
-;LE3-3.c: 60: PORTC = 0x00;
+l634:	
+;LE3-3.c: 59: PORTC = 0x00;
 	clrf	(7)	;volatile
-	line	64
-;LE3-3.c: 64: OPTION_REG = 0xC4;
-	movlw	(0C4h)
+	line	63
+;LE3-3.c: 63: OPTION_REG = 0x44;
+	movlw	(044h)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(129)^080h	;volatile
+	line	64
+	
+l636:	
+;LE3-3.c: 64: INTF = 0;
+	bcf	(89/8),(89)&7	;volatile
 	line	65
 	
-l644:	
-;LE3-3.c: 65: INTF = 0;
-	bcf	(89/8),(89)&7	;volatile
+l638:	
+;LE3-3.c: 65: INTE = 1;
+	bsf	(92/8),(92)&7	;volatile
 	line	66
 	
-l646:	
-;LE3-3.c: 66: INTE = 1;
-	bsf	(92/8),(92)&7	;volatile
+l640:	
+;LE3-3.c: 66: TMR0IF = 0;
+	bcf	(90/8),(90)&7	;volatile
 	line	67
 	
-l648:	
-;LE3-3.c: 67: TMR0IF = 0;
-	bcf	(90/8),(90)&7	;volatile
+l642:	
+;LE3-3.c: 67: TMR0IE = 1;
+	bsf	(93/8),(93)&7	;volatile
 	line	68
 	
-l650:	
-;LE3-3.c: 68: TMR0IE = 1;
-	bsf	(93/8),(93)&7	;volatile
-	line	69
-	
-l652:	
-;LE3-3.c: 69: GIE = 1;
+l644:	
+;LE3-3.c: 68: GIE = 1;
 	bsf	(95/8),(95)&7	;volatile
-	line	71
-;LE3-3.c: 71: while (1) {
+	line	70
+;LE3-3.c: 70: while (1) {
 	
-l67:	
-	line	72
-;LE3-3.c: 72: PORTC = counter;
+l59:	
+	line	71
+;LE3-3.c: 71: PORTC = counter;
 	movf	(_counter),w	;volatile
 	bcf	status, 5	;RP0=0, select bank0
 	movwf	(7)	;volatile
-	line	73
+	line	72
 	
-l654:	
-;LE3-3.c: 73: delay(98);
+l646:	
+;LE3-3.c: 72: delay(98);
 	movlw	low(062h)
 	movwf	(delay@cnt)
 	movlw	high(062h)
 	movwf	((delay@cnt))+1
 	fcall	_delay
-	line	74
+	line	73
 	
-l656:	
-;LE3-3.c: 74: counter++;
+l648:	
+;LE3-3.c: 73: counter++;
 	movlw	(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	movwf	(??_main+0)+0
 	movf	(??_main+0)+0,w
 	addwf	(_counter),f	;volatile
-	line	75
+	line	74
 	
-l658:	
-;LE3-3.c: 75: if (counter > 9)
+l650:	
+;LE3-3.c: 74: if (counter > 9)
 	movlw	(0Ah)
 	subwf	(_counter),w	;volatile
 	skipc
-	goto	u131
-	goto	u130
-u131:
-	goto	l67
-u130:
+	goto	u111
+	goto	u110
+u111:
+	goto	l59
+u110:
+	line	75
+	
+l652:	
+;LE3-3.c: 75: counter = 0;
+	clrf	(_counter)	;volatile
+	goto	l59
+	
+l60:	
+	goto	l59
 	line	76
 	
-l660:	
-;LE3-3.c: 76: counter = 0;
-	clrf	(_counter)	;volatile
-	goto	l67
+l61:	
+	line	70
+	goto	l59
 	
-l68:	
-	goto	l67
+l62:	
 	line	77
 	
-l69:	
-	line	71
-	goto	l67
-	
-l70:	
-	line	78
-	
-l71:	
+l63:	
 	global	start
 	ljmp	start
 	opt stack 0
@@ -624,7 +622,7 @@ _delay:
 ; Regs used in _delay: [wreg+status,2]
 	line	16
 	
-l628:	
+l620:	
 ;LE3-3.c: 16: int of_cnt = 0;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -632,20 +630,20 @@ l628:
 	clrf	(delay@of_cnt+1)
 	line	17
 ;LE3-3.c: 17: while (of_cnt < cnt) {
-	goto	l35
+	goto	l33
 	
-l36:	
+l34:	
 	line	18
 ;LE3-3.c: 18: if (myTMR0IF) {
 	btfss	(_myTMR0IF/8),(_myTMR0IF)&7	;volatile
-	goto	u111
-	goto	u110
-u111:
-	goto	l35
-u110:
+	goto	u91
+	goto	u90
+u91:
+	goto	l33
+u90:
 	line	19
 	
-l630:	
+l622:	
 ;LE3-3.c: 19: of_cnt++;
 	movlw	low(01h)
 	bcf	status, 5	;RP0=0, select bank0
@@ -657,16 +655,16 @@ l630:
 	addwf	(delay@of_cnt+1),f
 	line	20
 	
-l632:	
+l624:	
 ;LE3-3.c: 20: myTMR0IF = 0;
 	bcf	(_myTMR0IF/8),(_myTMR0IF)&7	;volatile
-	goto	l35
+	goto	l33
 	line	21
 	
-l37:	
+l35:	
 	line	22
 	
-l35:	
+l33:	
 	line	17
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
@@ -677,23 +675,23 @@ l35:
 	xorlw	80h
 	subwf	(??_delay+0)+0,w
 	skipz
-	goto	u125
+	goto	u105
 	movf	(delay@cnt),w
 	subwf	(delay@of_cnt),w
-u125:
+u105:
 
 	skipc
-	goto	u121
-	goto	u120
-u121:
-	goto	l36
-u120:
-	goto	l39
+	goto	u101
+	goto	u100
+u101:
+	goto	l34
+u100:
+	goto	l37
 	
-l38:	
+l36:	
 	line	23
 	
-l39:	
+l37:	
 	return
 	opt stack 0
 GLOBAL	__end_of_delay
@@ -765,7 +763,7 @@ interrupt_function:
 psect	text2
 	line	26
 	
-i1l534:	
+i1l526:	
 ;LE3-3.c: 26: GIE = 0;
 	bcf	(95/8),(95)&7	;volatile
 	line	27
@@ -774,163 +772,147 @@ i1l534:
 	goto	u3_21
 	goto	u3_20
 u3_21:
-	goto	i1l42
+	goto	i1l40
 u3_20:
 	line	28
 	
-i1l536:	
+i1l528:	
 ;LE3-3.c: 28: INTF = 0;
 	bcf	(89/8),(89)&7	;volatile
 	line	29
-;LE3-3.c: 29: while(RB0){}
-	goto	i1l43
 	
-i1l44:	
-	
-i1l43:	
-	btfsc	(48/8),(48)&7	;volatile
-	goto	u4_21
-	goto	u4_20
-u4_21:
-	goto	i1l43
-u4_20:
-	goto	i1l538
-	
-i1l45:	
-	line	30
-	
-i1l538:	
-;LE3-3.c: 30: unsigned char DATA = PORTD & 0x0F;
+i1l530:	
+;LE3-3.c: 29: unsigned char DATA = PORTD & 0x0F;
 	movf	(8),w	;volatile
 	andlw	0Fh
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(ISR@DATA)
+	line	30
+;LE3-3.c: 30: switch (DATA) {
+	goto	i1l554
 	line	31
-;LE3-3.c: 31: switch (DATA) {
-	goto	i1l562
+;LE3-3.c: 31: case 0x00: counter = 0; break;
+	
+i1l42:	
+	
+i1l532:	
+	clrf	(_counter)	;volatile
+	goto	i1l43
 	line	32
-;LE3-3.c: 32: case 0x00: counter = 1; break;
+;LE3-3.c: 32: case 0x01: counter = 1; break;
 	
-i1l47:	
+i1l44:	
 	
-i1l540:	
+i1l534:	
 	movlw	(01h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	33
-;LE3-3.c: 33: case 0x01: counter = 2; break;
+;LE3-3.c: 33: case 0x02: counter = 2; break;
 	
-i1l49:	
+i1l45:	
 	
-i1l542:	
+i1l536:	
 	movlw	(02h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	34
-;LE3-3.c: 34: case 0x02: counter = 3; break;
+;LE3-3.c: 34: case 0x04: counter = 3; break;
 	
-i1l50:	
+i1l46:	
 	
-i1l544:	
+i1l538:	
 	movlw	(03h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	35
-;LE3-3.c: 35: case 0x04: counter = 4; break;
+;LE3-3.c: 35: case 0x05: counter = 4; break;
 	
-i1l51:	
+i1l47:	
 	
-i1l546:	
+i1l540:	
 	movlw	(04h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	36
-;LE3-3.c: 36: case 0x05: counter = 5; break;
+;LE3-3.c: 36: case 0x06: counter = 5; break;
 	
-i1l52:	
+i1l48:	
 	
-i1l548:	
+i1l542:	
 	movlw	(05h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	37
-;LE3-3.c: 37: case 0x06: counter = 6; break;
+;LE3-3.c: 37: case 0x08: counter = 6; break;
 	
-i1l53:	
+i1l49:	
 	
-i1l550:	
+i1l544:	
 	movlw	(06h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	38
-;LE3-3.c: 38: case 0x08: counter = 7; break;
+;LE3-3.c: 38: case 0x09: counter = 7; break;
 	
-i1l54:	
+i1l50:	
 	
-i1l552:	
+i1l546:	
 	movlw	(07h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	39
-;LE3-3.c: 39: case 0x09: counter = 8; break;
+;LE3-3.c: 39: case 0x0A: counter = 8; break;
 	
-i1l55:	
+i1l51:	
 	
-i1l554:	
+i1l548:	
 	movlw	(08h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	40
-;LE3-3.c: 40: case 0x0A: counter = 9; break;
+;LE3-3.c: 40: case 0x0D: counter = 9; break;
 	
-i1l56:	
+i1l52:	
 	
-i1l556:	
+i1l550:	
 	movlw	(09h)
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(_counter)	;volatile
-	goto	i1l59
+	goto	i1l43
 	line	41
-;LE3-3.c: 41: case 0x0D: counter = 0; break;
+;LE3-3.c: 41: default: break;
 	
-i1l57:	
-	
-i1l558:	
-	clrf	(_counter)	;volatile
-	goto	i1l59
+i1l53:	
+	goto	i1l43
 	line	42
-;LE3-3.c: 42: default: break;
 	
-i1l58:	
-	goto	i1l59
-	line	43
+i1l552:	
+;LE3-3.c: 42: }
+	goto	i1l43
+	line	30
 	
-i1l560:	
-;LE3-3.c: 43: }
-	goto	i1l59
-	line	31
+i1l41:	
 	
-i1l46:	
-	
-i1l562:	
+i1l554:	
 	movf	(ISR@DATA),w
 	; Switch size 1, requested type "space"
 ; Number of cases is 10, Range of values is 0 to 13
@@ -944,90 +926,77 @@ i1l562:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	i1l540
+	goto	i1l532
 	xorlw	1^0	; case 1
 	skipnz
-	goto	i1l542
+	goto	i1l534
 	xorlw	2^1	; case 2
 	skipnz
-	goto	i1l544
+	goto	i1l536
 	xorlw	4^2	; case 4
 	skipnz
-	goto	i1l546
+	goto	i1l538
 	xorlw	5^4	; case 5
 	skipnz
-	goto	i1l548
+	goto	i1l540
 	xorlw	6^5	; case 6
 	skipnz
-	goto	i1l550
+	goto	i1l542
 	xorlw	8^6	; case 8
 	skipnz
-	goto	i1l552
+	goto	i1l544
 	xorlw	9^8	; case 9
 	skipnz
-	goto	i1l554
+	goto	i1l546
 	xorlw	10^9	; case 10
 	skipnz
-	goto	i1l556
+	goto	i1l548
 	xorlw	13^10	; case 13
 	skipnz
-	goto	i1l558
-	goto	i1l59
+	goto	i1l550
+	goto	i1l43
 	opt asmopt_on
 
+	line	42
+	
+i1l43:	
 	line	43
-	
-i1l48:	
+;LE3-3.c: 43: INTE = 1;
+	bsf	(92/8),(92)&7	;volatile
 	line	44
-;LE3-3.c: 44: while(!RB0){}
-	goto	i1l59
-	
-i1l60:	
-	
-i1l59:	
-	btfss	(48/8),(48)&7	;volatile
-	goto	u5_21
-	goto	u5_20
-u5_21:
-	goto	i1l59
-u5_20:
-	goto	i1l62
-	
-i1l61:	
+;LE3-3.c: 44: }
+	goto	i1l54
 	line	45
-;LE3-3.c: 45: }
-	goto	i1l62
+	
+i1l40:	
+;LE3-3.c: 45: else if (TMR0IF) {
+	btfss	(90/8),(90)&7	;volatile
+	goto	u4_21
+	goto	u4_20
+u4_21:
+	goto	i1l54
+u4_20:
 	line	46
 	
-i1l42:	
-;LE3-3.c: 46: else if (TMR0IF) {
-	btfss	(90/8),(90)&7	;volatile
-	goto	u6_21
-	goto	u6_20
-u6_21:
-	goto	i1l62
-u6_20:
-	line	47
-	
-i1l564:	
-;LE3-3.c: 47: TMR0IF = 0;
+i1l556:	
+;LE3-3.c: 46: TMR0IF = 0;
 	bcf	(90/8),(90)&7	;volatile
-	line	48
-;LE3-3.c: 48: myTMR0IF = 1;
+	line	47
+;LE3-3.c: 47: myTMR0IF = 1;
 	bsf	(_myTMR0IF/8),(_myTMR0IF)&7	;volatile
-	goto	i1l62
+	goto	i1l54
+	line	48
+	
+i1l55:	
 	line	49
 	
-i1l63:	
+i1l54:	
+;LE3-3.c: 48: }
+;LE3-3.c: 49: GIE = 1;
+	bsf	(95/8),(95)&7	;volatile
 	line	50
 	
-i1l62:	
-;LE3-3.c: 49: }
-;LE3-3.c: 50: GIE = 1;
-	bsf	(95/8),(95)&7	;volatile
-	line	51
-	
-i1l64:	
+i1l56:	
 	movf	(??_ISR+4),w
 	movwf	btemp+1
 	movf	(??_ISR+3),w

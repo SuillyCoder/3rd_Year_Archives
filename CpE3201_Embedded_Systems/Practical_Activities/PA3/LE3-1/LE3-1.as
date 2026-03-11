@@ -173,8 +173,6 @@ _GIE	set	0x5F
 _INTE	set	0x5C
 	global	_INTF
 _INTF	set	0x59
-	global	_RB0
-_RB0	set	0x30
 	global	_TRISB
 _TRISB	set	0x86
 	global	_TRISC
@@ -357,7 +355,7 @@ ISR@DATA:	; 1 bytes @ 0x5
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 46 in file "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-1\LE3-1.c"
+;;		line 45 in file "C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-1\LE3-1.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
@@ -385,12 +383,12 @@ ISR@DATA:	; 1 bytes @ 0x5
 ;;
 psect	maintext,global,class=CODE,delta=2,split=1
 	file	"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-1\LE3-1.c"
-	line	46
+	line	45
 global __pmaintext
 __pmaintext:	;psect for function _main
 psect	maintext
 	file	"C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA3\LE3-1\LE3-1.c"
-	line	46
+	line	45
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
@@ -398,67 +396,67 @@ _main:
 ;incstack = 0
 	opt	stack 7
 ; Regs used in _main: [wreg+status,2]
-	line	48
+	line	47
 	
-l538:	
-;LE3-1.c: 48: TRISB = 0xFF;
+l530:	
+;LE3-1.c: 47: TRISB = 0xFF;
 	movlw	(0FFh)
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	movwf	(134)^080h	;volatile
+	line	48
+	
+l532:	
+;LE3-1.c: 48: TRISC = 0x00;
+	clrf	(135)^080h	;volatile
 	line	49
 	
-l540:	
-;LE3-1.c: 49: TRISC = 0x00;
-	clrf	(135)^080h	;volatile
-	line	50
-	
-l542:	
-;LE3-1.c: 50: TRISD = 0xFF;
+l534:	
+;LE3-1.c: 49: TRISD = 0xFF;
 	movlw	(0FFh)
 	movwf	(136)^080h	;volatile
-	line	52
-;LE3-1.c: 52: PORTC = 0x00;
+	line	51
+;LE3-1.c: 51: PORTC = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
 	clrf	(7)	;volatile
-	line	55
+	line	54
 	
-l544:	
-;LE3-1.c: 55: INTEDG = 1;
+l536:	
+;LE3-1.c: 54: INTEDG = 1;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
 	bsf	(1038/8)^080h,(1038)&7	;volatile
+	line	55
+	
+l538:	
+;LE3-1.c: 55: INTF = 0;
+	bcf	(89/8),(89)&7	;volatile
 	line	56
 	
-l546:	
-;LE3-1.c: 56: INTF = 0;
-	bcf	(89/8),(89)&7	;volatile
-	line	57
-	
-l548:	
-;LE3-1.c: 57: INTE = 1;
+l540:	
+;LE3-1.c: 56: INTE = 1;
 	bsf	(92/8),(92)&7	;volatile
-	line	61
+	line	60
 	
-l550:	
-;LE3-1.c: 61: GIE = 1;
+l542:	
+;LE3-1.c: 60: GIE = 1;
 	bsf	(95/8),(95)&7	;volatile
-	line	63
-;LE3-1.c: 63: while(1)
+	line	62
+;LE3-1.c: 62: while(1)
 	
-l46:	
-	line	66
-;LE3-1.c: 64: {
+l38:	
+	line	65
+;LE3-1.c: 63: {
 	
-l47:	
-	line	63
-	goto	l46
+l39:	
+	line	62
+	goto	l38
 	
-l48:	
-	line	68
+l40:	
+	line	67
 	
-l49:	
+l41:	
 	global	start
 	ljmp	start
 	opt stack 0
@@ -531,7 +529,7 @@ interrupt_function:
 psect	text1
 	line	22
 	
-i1l506:	
+i1l498:	
 ;LE3-1.c: 22: GIE = 0;
 	bcf	(95/8),(95)&7	;volatile
 	line	23
@@ -540,149 +538,133 @@ i1l506:
 	goto	u1_21
 	goto	u1_20
 u1_21:
-	goto	i1l23
+	goto	i1l21
 u1_20:
 	line	24
 	
-i1l508:	
+i1l500:	
 ;LE3-1.c: 24: INTF = 0;
 	bcf	(89/8),(89)&7	;volatile
 	line	25
-;LE3-1.c: 25: while(RB0){}
-	goto	i1l24
 	
-i1l25:	
-	
-i1l24:	
-	btfsc	(48/8),(48)&7	;volatile
-	goto	u2_21
-	goto	u2_20
-u2_21:
-	goto	i1l24
-u2_20:
-	goto	i1l510
-	
-i1l26:	
-	line	26
-	
-i1l510:	
-;LE3-1.c: 26: unsigned char DATA = PORTD & 0x0F;
+i1l502:	
+;LE3-1.c: 25: unsigned char DATA = PORTD & 0x0F;
 	movf	(8),w	;volatile
 	andlw	0Fh
 	movwf	(??_ISR+0)+0
 	movf	(??_ISR+0)+0,w
 	movwf	(ISR@DATA)
+	line	26
+;LE3-1.c: 26: switch (DATA) {
+	goto	i1l528
 	line	27
-;LE3-1.c: 27: switch (DATA) {
-	goto	i1l536
+;LE3-1.c: 27: case 0x00: PORTC = 0x01; break;
+	
+i1l23:	
+	
+i1l504:	
+	movlw	(01h)
+	movwf	(7)	;volatile
+	goto	i1l24
 	line	28
-;LE3-1.c: 28: case 0x00: PORTC = 0x01; break;
+;LE3-1.c: 28: case 0x01: PORTC = 0x02; break;
+	
+i1l25:	
+	
+i1l506:	
+	movlw	(02h)
+	movwf	(7)	;volatile
+	goto	i1l24
+	line	29
+;LE3-1.c: 29: case 0x02: PORTC = 0x03; break;
+	
+i1l26:	
+	
+i1l508:	
+	movlw	(03h)
+	movwf	(7)	;volatile
+	goto	i1l24
+	line	30
+;LE3-1.c: 30: case 0x04: PORTC = 0x04; break;
+	
+i1l27:	
+	
+i1l510:	
+	movlw	(04h)
+	movwf	(7)	;volatile
+	goto	i1l24
+	line	31
+;LE3-1.c: 31: case 0x05: PORTC = 0x05; break;
 	
 i1l28:	
 	
 i1l512:	
-	movlw	(01h)
+	movlw	(05h)
 	movwf	(7)	;volatile
-	goto	i1l40
-	line	29
-;LE3-1.c: 29: case 0x01: PORTC = 0x02; break;
+	goto	i1l24
+	line	32
+;LE3-1.c: 32: case 0x06: PORTC = 0x06; break;
+	
+i1l29:	
+	
+i1l514:	
+	movlw	(06h)
+	movwf	(7)	;volatile
+	goto	i1l24
+	line	33
+;LE3-1.c: 33: case 0x08: PORTC = 0x07; break;
 	
 i1l30:	
 	
-i1l514:	
-	movlw	(02h)
+i1l516:	
+	movlw	(07h)
 	movwf	(7)	;volatile
-	goto	i1l40
-	line	30
-;LE3-1.c: 30: case 0x02: PORTC = 0x03; break;
+	goto	i1l24
+	line	34
+;LE3-1.c: 34: case 0x09: PORTC = 0x08; break;
 	
 i1l31:	
 	
-i1l516:	
-	movlw	(03h)
+i1l518:	
+	movlw	(08h)
 	movwf	(7)	;volatile
-	goto	i1l40
-	line	31
-;LE3-1.c: 31: case 0x04: PORTC = 0x04; break;
+	goto	i1l24
+	line	35
+;LE3-1.c: 35: case 0x0A: PORTC = 0x09; break;
 	
 i1l32:	
 	
-i1l518:	
-	movlw	(04h)
+i1l520:	
+	movlw	(09h)
 	movwf	(7)	;volatile
-	goto	i1l40
-	line	32
-;LE3-1.c: 32: case 0x05: PORTC = 0x05; break;
+	goto	i1l24
+	line	36
+;LE3-1.c: 36: case 0x0D: PORTC = 0x00; break;
 	
 i1l33:	
 	
-i1l520:	
-	movlw	(05h)
-	movwf	(7)	;volatile
-	goto	i1l40
-	line	33
-;LE3-1.c: 33: case 0x06: PORTC = 0x06; break;
+i1l522:	
+	clrf	(7)	;volatile
+	goto	i1l24
+	line	37
+;LE3-1.c: 37: default: PORTC = 0x0F; break;
 	
 i1l34:	
 	
-i1l522:	
-	movlw	(06h)
-	movwf	(7)	;volatile
-	goto	i1l40
-	line	34
-;LE3-1.c: 34: case 0x08: PORTC = 0x07; break;
-	
-i1l35:	
-	
 i1l524:	
-	movlw	(07h)
-	movwf	(7)	;volatile
-	goto	i1l40
-	line	35
-;LE3-1.c: 35: case 0x09: PORTC = 0x08; break;
-	
-i1l36:	
-	
-i1l526:	
-	movlw	(08h)
-	movwf	(7)	;volatile
-	goto	i1l40
-	line	36
-;LE3-1.c: 36: case 0x0A: PORTC = 0x09; break;
-	
-i1l37:	
-	
-i1l528:	
-	movlw	(09h)
-	movwf	(7)	;volatile
-	goto	i1l40
-	line	37
-;LE3-1.c: 37: case 0x0D: PORTC = 0x00; break;
-	
-i1l38:	
-	
-i1l530:	
-	clrf	(7)	;volatile
-	goto	i1l40
-	line	38
-;LE3-1.c: 38: default: PORTC = 0x0F; break;
-	
-i1l39:	
-	
-i1l532:	
 	movlw	(0Fh)
 	movwf	(7)	;volatile
-	goto	i1l40
-	line	39
+	goto	i1l24
+	line	38
 	
-i1l534:	
-;LE3-1.c: 39: }
-	goto	i1l40
-	line	27
+i1l526:	
+;LE3-1.c: 38: }
+	goto	i1l24
+	line	26
 	
-i1l27:	
+i1l22:	
 	
-i1l536:	
+i1l528:	
 	movf	(ISR@DATA),w
 	; Switch size 1, requested type "space"
 ; Number of cases is 10, Range of values is 0 to 13
@@ -696,66 +678,53 @@ i1l536:
 	opt asmopt_off
 	xorlw	0^0	; case 0
 	skipnz
-	goto	i1l512
+	goto	i1l504
 	xorlw	1^0	; case 1
 	skipnz
-	goto	i1l514
+	goto	i1l506
 	xorlw	2^1	; case 2
 	skipnz
-	goto	i1l516
+	goto	i1l508
 	xorlw	4^2	; case 4
 	skipnz
-	goto	i1l518
+	goto	i1l510
 	xorlw	5^4	; case 5
 	skipnz
-	goto	i1l520
+	goto	i1l512
 	xorlw	6^5	; case 6
 	skipnz
-	goto	i1l522
+	goto	i1l514
 	xorlw	8^6	; case 8
 	skipnz
-	goto	i1l524
+	goto	i1l516
 	xorlw	9^8	; case 9
 	skipnz
-	goto	i1l526
+	goto	i1l518
 	xorlw	10^9	; case 10
 	skipnz
-	goto	i1l528
+	goto	i1l520
 	xorlw	13^10	; case 13
 	skipnz
-	goto	i1l530
-	goto	i1l532
+	goto	i1l522
+	goto	i1l524
 	opt asmopt_on
 
+	line	38
+	
+i1l24:	
 	line	39
-	
-i1l29:	
+;LE3-1.c: 39: INTE = 1;
+	bsf	(92/8),(92)&7	;volatile
 	line	40
-;LE3-1.c: 40: while(!RB0){}
-	goto	i1l40
 	
-i1l41:	
-	
-i1l40:	
-	btfss	(48/8),(48)&7	;volatile
-	goto	u3_21
-	goto	u3_20
-u3_21:
-	goto	i1l40
-u3_20:
-	goto	i1l23
-	
-i1l42:	
+i1l21:	
 	line	41
-	
-i1l23:	
-	line	42
-;LE3-1.c: 41: }
-;LE3-1.c: 42: GIE = 1;
+;LE3-1.c: 40: }
+;LE3-1.c: 41: GIE = 1;
 	bsf	(95/8),(95)&7	;volatile
-	line	43
+	line	42
 	
-i1l43:	
+i1l35:	
 	movf	(??_ISR+4),w
 	movwf	btemp+1
 	movf	(??_ISR+3),w

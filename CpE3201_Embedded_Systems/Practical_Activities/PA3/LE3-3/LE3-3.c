@@ -26,22 +26,21 @@ void interrupt ISR() {
     GIE = 0;
     if (INTF) {
         INTF = 0;
-        while(RB0){}
         unsigned char DATA = PORTD & 0x0F;
         switch (DATA) {
-            case 0x00: counter = 1; break;
-            case 0x01: counter = 2; break;
-            case 0x02: counter = 3; break;
-            case 0x04: counter = 4; break;
-            case 0x05: counter = 5; break;
-            case 0x06: counter = 6; break;
-            case 0x08: counter = 7; break;
-            case 0x09: counter = 8; break;
-            case 0x0A: counter = 9; break;
-            case 0x0D: counter = 0; break;
+            case 0x00: counter = 0; break;
+            case 0x01: counter = 1; break;
+            case 0x02: counter = 2; break;
+            case 0x04: counter = 3; break;
+            case 0x05: counter = 4; break;
+            case 0x06: counter = 5; break;
+            case 0x08: counter = 6; break;
+            case 0x09: counter = 7; break;
+            case 0x0A: counter = 8; break;
+            case 0x0D: counter = 9; break;
             default: break;
         }
-        while(!RB0){}
+        INTE = 1; // re-enable external interrupt
     }
     else if (TMR0IF) {
         TMR0IF = 0;
@@ -61,7 +60,7 @@ void main(void) {
 
     // RB0/INT + Timer0, rising edge, internal clock, 1:32 prescaler
     // 0.8 seconds = 98 overflows (0.8 / 0.008196 = 97.6 ˜ 98)
-    OPTION_REG = 0xC4;
+    OPTION_REG = 0x44;
     INTF   = 0;
     INTE   = 1;
     TMR0IF = 0;
