@@ -159,23 +159,18 @@ EEADRH equ 010Fh ;#
 EECON1 equ 018Ch ;# 
 # 2301 "C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h"
 EECON2 equ 018Dh ;# 
+	FNCALL	_main,_delay
 	FNROOT	_main
-	global	_PORTB
-_PORTB	set	0x6
-	global	_RA0
-_RA0	set	0x28
-	global	_ADCON1
-_ADCON1	set	0x9F
+	global	_PORTA
+_PORTA	set	0x5
 	global	_TRISA
 _TRISA	set	0x85
-	global	_TRISB
-_TRISB	set	0x86
-psect	maintext,global,class=CODE,delta=2,split=1
+psect	text0,local,class=CODE,delta=2,merge=1
 ; #config settings
 	file	"C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h"
 	line	2761
-global __pmaintext
-__pmaintext:	;psect for function _main
+global __ptext0
+__ptext0:	;psect for function _delay
 global __CFG_WDTE$OFF
 __CFG_WDTE$OFF equ 0x0
 global __CFG_PWRTE$ON
@@ -211,14 +206,20 @@ ljmp _main	;jump to C main() function
 psect	cstackCOMMON,class=COMMON,space=1,noexec
 global __pcstackCOMMON
 __pcstackCOMMON:
+?_delay:	; 0 bytes @ 0x0
+??_delay:	; 0 bytes @ 0x0
 ?_main:	; 0 bytes @ 0x0
-??_main:	; 0 bytes @ 0x0
-	global	main@i_27
-main@i_27:	; 2 bytes @ 0x0
 	ds	2
-	global	main@cnt
-main@cnt:	; 2 bytes @ 0x2
+	global	delay@cnt
+delay@cnt:	; 1 bytes @ 0x2
+	ds	1
+	global	delay@i
+delay@i:	; 2 bytes @ 0x3
 	ds	2
+	global	delay@j
+delay@j:	; 2 bytes @ 0x5
+	ds	2
+??_main:	; 0 bytes @ 0x7
 ;!
 ;!Data Sizes:
 ;!    Strings     0
@@ -230,7 +231,7 @@ main@cnt:	; 2 bytes @ 0x2
 ;!
 ;!Auto Spaces:
 ;!    Space          Size  Autos    Used
-;!    COMMON           14      4       4
+;!    COMMON           14      7       7
 ;!    BANK0            80      0       0
 ;!    BANK1            80      0       0
 ;!    BANK3            96      0       0
@@ -245,7 +246,7 @@ main@cnt:	; 2 bytes @ 0x2
 ;!
 ;!Critical Paths under _main in COMMON
 ;!
-;!    None.
+;!    _main->_delay
 ;!
 ;!Critical Paths under _main in BANK0
 ;!
@@ -273,15 +274,19 @@ main@cnt:	; 2 bytes @ 0x2
 ;! ---------------------------------------------------------------------------------
 ;! (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
 ;! ---------------------------------------------------------------------------------
-;! (0) _main                                                 6     6      0      90
-;!                                              0 COMMON     4     4      0
+;! (0) _main                                                 0     0      0      75
+;!                              _delay
 ;! ---------------------------------------------------------------------------------
-;! Estimated maximum stack depth 0
+;! (1) _delay                                                7     7      0      75
+;!                                              0 COMMON     7     7      0
+;! ---------------------------------------------------------------------------------
+;! Estimated maximum stack depth 1
 ;! ---------------------------------------------------------------------------------
 ;!
 ;! Call Graph Graphs:
 ;!
 ;! _main (ROOT)
+;!   _delay
 ;!
 
 ;! Address spaces:
@@ -291,7 +296,7 @@ main@cnt:	; 2 bytes @ 0x2
 ;!EEDATA             100      0       0       0        0.0%
 ;!NULL                 0      0       0       0        0.0%
 ;!CODE                 0      0       0       0        0.0%
-;!COMMON               E      4       4       1       28.6%
+;!COMMON               E      7       7       1       50.0%
 ;!BITSFR0              0      0       0       1        0.0%
 ;!SFR0                 0      0       0       1        0.0%
 ;!BITSFR1              0      0       0       2        0.0%
@@ -316,291 +321,270 @@ main@cnt:	; 2 bytes @ 0x2
 
 ;; *************** function _main *****************
 ;; Defined at:
-;;		line 15 in file "C:\Users\enzoa\Downloads\LE1.c"
+;;		line 21 in file "C:\Users\enzoa\Downloads\LE1.c"
 ;; Parameters:    Size  Location     Type
 ;;		None
 ;; Auto vars:     Size  Location     Type
-;;  i               2    0[COMMON] int 
-;;  cnt             2    2[COMMON] int 
-;;  i               2    0        int 
+;;		None
 ;; Return value:  Size  Location     Type
 ;;		None               void
 ;; Registers used:
-;;		wreg, status,2, btemp+1
+;;		wreg, status,2, status,0, btemp+1, pclath, cstack
 ;; Tracked objects:
 ;;		On entry : 17F/0
 ;;		On exit  : 0/0
 ;;		Unchanged: 0/0
 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
 ;;      Params:         0       0       0       0       0
-;;      Locals:         4       0       0       0       0
+;;      Locals:         0       0       0       0       0
 ;;      Temps:          0       0       0       0       0
-;;      Totals:         4       0       0       0       0
-;;Total ram usage:        4 bytes
+;;      Totals:         0       0       0       0       0
+;;Total ram usage:        0 bytes
+;; Hardware stack levels required when called:    1
 ;; This function calls:
-;;		Nothing
+;;		_delay
 ;; This function is called by:
 ;;		Startup code after reset
 ;; This function uses a non-reentrant model
 ;;
-psect	maintext
+psect	maintext,global,class=CODE,delta=2,split=1
+	file	"C:\Users\enzoa\Downloads\LE1.c"
+	line	21
+global __pmaintext
+__pmaintext:	;psect for function _main
 psect	maintext
 	file	"C:\Users\enzoa\Downloads\LE1.c"
-	line	15
+	line	21
 	global	__size_of_main
 	__size_of_main	equ	__end_of_main-_main
 	
 _main:	
 ;incstack = 0
-	opt	stack 8
-; Regs used in _main: [wreg+status,2+btemp+1]
-	line	18
+	opt	stack 7
+; Regs used in _main: [wreg+status,2+status,0+btemp+1+pclath+cstack]
+	line	22
 	
-l477:	
-;LE1.c: 17: int cnt; int i;
-;LE1.c: 18: ADCON1 = 0X06;
-	movlw	(06h)
+l494:	
+;LE1.c: 22: TRISA = 0x00;
 	bsf	status, 5	;RP0=1, select bank1
 	bcf	status, 6	;RP1=0, select bank1
-	movwf	(159)^080h	;volatile
-	line	19
-	
-l479:	
-;LE1.c: 19: TRISB = 0x00;
-	clrf	(134)^080h	;volatile
-	line	20
-	
-l481:	
-;LE1.c: 20: TRISA = 0x01;
-	movlw	(01h)
-	movwf	(133)^080h	;volatile
-	line	21
-;LE1.c: 21: PORTB = 0X00;
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	clrf	(6)	;volatile
+	clrf	(133)^080h	;volatile
+	goto	l496
 	line	24
-	
-l483:	
-;LE1.c: 24: if (RA0 == 0x01){
-	btfss	(40/8),(40)&7	;volatile
-	goto	u11
-	goto	u10
-u11:
-	goto	l20
-u10:
-	line	25
-	
-l485:	
-;LE1.c: 25: for (int i = 0; i < 3; i++){
-	clrf	(main@i_27)
-	clrf	(main@i_27+1)
-	
-l487:	
-	movf	(main@i_27+1),w
-	xorlw	80h
-	movwf	btemp+1
-	movlw	(high(03h))^80h
-	subwf	btemp+1,w
-	skipz
-	goto	u25
-	movlw	low(03h)
-	subwf	(main@i_27),w
-u25:
-
-	skipc
-	goto	u21
-	goto	u20
-u21:
-	goto	l491
-u20:
-	goto	l20
-	
-l489:	
-	goto	l20
+;LE1.c: 24: while (1) {
 	
 l14:	
-	line	26
+	line	25
 	
-l491:	
-;LE1.c: 26: for (cnt = 0; cnt < 10000; cnt++);
-	clrf	(main@cnt)
-	clrf	(main@cnt+1)
-	
-l493:	
-	movf	(main@cnt+1),w
-	xorlw	80h
-	movwf	btemp+1
-	movlw	(high(02710h))^80h
-	subwf	btemp+1,w
-	skipz
-	goto	u35
-	movlw	low(02710h)
-	subwf	(main@cnt),w
-u35:
-
-	skipc
-	goto	u31
-	goto	u30
-u31:
-	goto	l497
-u30:
-	goto	l501
-	
-l495:	
-	goto	l501
-	
-l16:	
-	
-l497:	
-	movlw	low(01h)
-	addwf	(main@cnt),f
-	skipnc
-	incf	(main@cnt+1),f
-	movlw	high(01h)
-	addwf	(main@cnt+1),f
-	
-l499:	
-	movf	(main@cnt+1),w
-	xorlw	80h
-	movwf	btemp+1
-	movlw	(high(02710h))^80h
-	subwf	btemp+1,w
-	skipz
-	goto	u45
-	movlw	low(02710h)
-	subwf	(main@cnt),w
-u45:
-
-	skipc
-	goto	u41
-	goto	u40
-u41:
-	goto	l497
-u40:
-	goto	l501
-	
-l17:	
-	line	27
-	
-l501:	
-;LE1.c: 27: PORTB = 0x01;
+l496:	
+;LE1.c: 25: PORTA = 0x01;
 	movlw	(01h)
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	movwf	(6)	;volatile
-	line	28
+	movwf	(5)	;volatile
+	line	26
 	
-l503:	
-;LE1.c: 28: for (cnt = 0; cnt < 10000; cnt++);
-	clrf	(main@cnt)
-	clrf	(main@cnt+1)
+l498:	
+;LE1.c: 26: delay(10);
+	movlw	(0Ah)
+	fcall	_delay
+	line	27
 	
-l505:	
-	movf	(main@cnt+1),w
-	xorlw	80h
-	movwf	btemp+1
-	movlw	(high(02710h))^80h
-	subwf	btemp+1,w
-	skipz
-	goto	u55
-	movlw	low(02710h)
-	subwf	(main@cnt),w
-u55:
-
-	skipc
-	goto	u51
-	goto	u50
-u51:
-	goto	l509
-u50:
-	goto	l513
-	
-l507:	
-	goto	l513
-	
-l18:	
-	
-l509:	
-	movlw	low(01h)
-	addwf	(main@cnt),f
-	skipnc
-	incf	(main@cnt+1),f
-	movlw	high(01h)
-	addwf	(main@cnt+1),f
-	
-l511:	
-	movf	(main@cnt+1),w
-	xorlw	80h
-	movwf	btemp+1
-	movlw	(high(02710h))^80h
-	subwf	btemp+1,w
-	skipz
-	goto	u65
-	movlw	low(02710h)
-	subwf	(main@cnt),w
-u65:
-
-	skipc
-	goto	u61
-	goto	u60
-u61:
-	goto	l509
-u60:
-	goto	l513
-	
-l19:	
-	line	29
-	
-l513:	
-;LE1.c: 29: PORTB = 0x00;
+l500:	
+;LE1.c: 27: PORTA = 0x00;
 	bcf	status, 5	;RP0=0, select bank0
 	bcf	status, 6	;RP1=0, select bank0
-	clrf	(6)	;volatile
-	line	25
+	clrf	(5)	;volatile
+	line	28
 	
-l515:	
-	movlw	low(01h)
-	addwf	(main@i_27),f
-	skipnc
-	incf	(main@i_27+1),f
-	movlw	high(01h)
-	addwf	(main@i_27+1),f
-	
-l517:	
-	movf	(main@i_27+1),w
-	xorlw	80h
-	movwf	btemp+1
-	movlw	(high(03h))^80h
-	subwf	btemp+1,w
-	skipz
-	goto	u75
-	movlw	low(03h)
-	subwf	(main@i_27),w
-u75:
-
-	skipc
-	goto	u71
-	goto	u70
-u71:
-	goto	l491
-u70:
-	goto	l20
+l502:	
+;LE1.c: 28: delay(10);
+	movlw	(0Ah)
+	fcall	_delay
+	goto	l496
+	line	29
 	
 l15:	
-	goto	l20
-	line	31
+	line	24
+	goto	l496
 	
-l13:	
-	line	32
+l16:	
+	line	30
 	
-l20:	
+l17:	
 	global	start
 	ljmp	start
 	opt stack 0
 GLOBAL	__end_of_main
 	__end_of_main:
 	signat	_main,88
+	global	_delay
+
+;; *************** function _delay *****************
+;; Defined at:
+;;		line 14 in file "C:\Users\enzoa\Downloads\LE1.c"
+;; Parameters:    Size  Location     Type
+;;  cnt             1    wreg     unsigned char 
+;; Auto vars:     Size  Location     Type
+;;  cnt             1    2[COMMON] unsigned char 
+;;  j               2    5[COMMON] int 
+;;  i               2    3[COMMON] int 
+;; Return value:  Size  Location     Type
+;;		None               void
+;; Registers used:
+;;		wreg, status,2, status,0, btemp+1
+;; Tracked objects:
+;;		On entry : 0/0
+;;		On exit  : 0/0
+;;		Unchanged: 0/0
+;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+;;      Params:         0       0       0       0       0
+;;      Locals:         5       0       0       0       0
+;;      Temps:          2       0       0       0       0
+;;      Totals:         7       0       0       0       0
+;;Total ram usage:        7 bytes
+;; Hardware stack levels used:    1
+;; This function calls:
+;;		Nothing
+;; This function is called by:
+;;		_main
+;; This function uses a non-reentrant model
+;;
+psect	text1,local,class=CODE,delta=2,merge=1
+	line	14
+global __ptext1
+__ptext1:	;psect for function _delay
+psect	text1
+	file	"C:\Users\enzoa\Downloads\LE1.c"
+	line	14
+	global	__size_of_delay
+	__size_of_delay	equ	__end_of_delay-_delay
+	
+_delay:	
+;incstack = 0
+	opt	stack 7
+; Regs used in _delay: [wreg+status,2+status,0+btemp+1]
+;delay@cnt stored from wreg
+	movwf	(delay@cnt)
+	line	16
+	
+l474:	
+;LE1.c: 15: int i, j;
+;LE1.c: 16: for (i = cnt; i != 0; i--) {
+	movf	(delay@cnt),w
+	movwf	(??_delay+0)+0
+	clrf	(??_delay+0)+0+1
+	movf	0+(??_delay+0)+0,w
+	movwf	(delay@i)
+	movf	1+(??_delay+0)+0,w
+	movwf	(delay@i+1)
+	
+l476:	
+	movf	((delay@i+1)),w
+	iorwf	((delay@i)),w
+	skipz
+	goto	u11
+	goto	u10
+u11:
+	goto	l480
+u10:
+	goto	l11
+	
+l478:	
+	goto	l11
+	
+l7:	
+	line	17
+	
+l480:	
+;LE1.c: 17: for (j = 0; j < 1000; j++) {}
+	clrf	(delay@j)
+	clrf	(delay@j+1)
+	
+l482:	
+	movf	(delay@j+1),w
+	xorlw	80h
+	movwf	btemp+1
+	movlw	(high(03E8h))^80h
+	subwf	btemp+1,w
+	skipz
+	goto	u25
+	movlw	low(03E8h)
+	subwf	(delay@j),w
+u25:
+
+	skipc
+	goto	u21
+	goto	u20
+u21:
+	goto	l486
+u20:
+	goto	l490
+	
+l484:	
+	goto	l490
+	
+l9:	
+	
+l486:	
+	movlw	low(01h)
+	addwf	(delay@j),f
+	skipnc
+	incf	(delay@j+1),f
+	movlw	high(01h)
+	addwf	(delay@j+1),f
+	
+l488:	
+	movf	(delay@j+1),w
+	xorlw	80h
+	movwf	btemp+1
+	movlw	(high(03E8h))^80h
+	subwf	btemp+1,w
+	skipz
+	goto	u35
+	movlw	low(03E8h)
+	subwf	(delay@j),w
+u35:
+
+	skipc
+	goto	u31
+	goto	u30
+u31:
+	goto	l486
+u30:
+	goto	l490
+	
+l10:	
+	line	16
+	
+l490:	
+	movlw	low(-1)
+	addwf	(delay@i),f
+	skipnc
+	incf	(delay@i+1),f
+	movlw	high(-1)
+	addwf	(delay@i+1),f
+	
+l492:	
+	movf	((delay@i+1)),w
+	iorwf	((delay@i)),w
+	skipz
+	goto	u41
+	goto	u40
+u41:
+	goto	l480
+u40:
+	goto	l11
+	
+l8:	
+	line	19
+	
+l11:	
+	return
+	opt stack 0
+GLOBAL	__end_of_delay
+	__end_of_delay:
+	signat	_delay,4216
 global	___latbits
 ___latbits	equ	2
 	global	btemp

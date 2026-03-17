@@ -1,15 +1,9 @@
 Version 3.2 HI-TECH Software Intermediate Code
 [p mainexit ]
-"2173 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
-[v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
-"1335
-[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
-"1286
+"1286 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
-"207
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"2499
-[v _RA0 `Vb ~T0 @X0 0 e@40 ]
+"158
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
 [; ;htc.h: 21: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 24: extern void __builtin_software_breakpoint(void);
 [; ;pic16f877a.h: 47: extern volatile unsigned char INDF @ 0x000;
@@ -1039,83 +1033,84 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "10
 [p x CP=OFF ]
+"14
+[v _delay `(v ~T0 @X0 1 ef1`uc ]
+{
+[; ;LE1.c: 14: void delay(unsigned char cnt) {
+[e :U _delay ]
+[v _cnt `uc ~T0 @X0 1 r1 ]
+[f ]
 "15
+[v _i `i ~T0 @X0 1 a ]
+[v _j `i ~T0 @X0 1 a ]
+[; ;LE1.c: 15: int i, j;
+[; ;LE1.c: 16: for (i = cnt; i != 0; i--) {
+"16
+{
+[e = _i -> _cnt `i ]
+[e $ != _i -> 0 `i 97  ]
+[e $U 98  ]
+[e :U 97 ]
+{
+[; ;LE1.c: 17: for (j = 0; j < 1000; j++) {}
+"17
+{
+[e = _j -> 0 `i ]
+[e $ < _j -> 1000 `i 100  ]
+[e $U 101  ]
+[e :U 100 ]
+{
+}
+[e ++ _j -> 1 `i ]
+[e $ < _j -> 1000 `i 100  ]
+[e :U 101 ]
+}
+"18
+}
+"16
+[e -- _i -> 1 `i ]
+[e $ != _i -> 0 `i 97  ]
+[e :U 98 ]
+"18
+}
+[; ;LE1.c: 18: }
+[; ;LE1.c: 19: }
+"19
+[e :UE 96 ]
+}
+"21
 [v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;LE1.c: 15: void main(){
+[; ;LE1.c: 21: void main(void) {
 [e :U _main ]
 [f ]
-"17
-[v _cnt `i ~T0 @X0 1 a ]
-[v _i `i ~T0 @X0 1 a ]
-[; ;LE1.c: 17: int cnt; int i;
-[; ;LE1.c: 18: ADCON1 = 0X06;
-"18
-[e = _ADCON1 -> -> 6 `i `uc ]
-[; ;LE1.c: 19: TRISB = 0x00;
-"19
-[e = _TRISB -> -> 0 `i `uc ]
-[; ;LE1.c: 20: TRISA = 0x01;
-"20
-[e = _TRISA -> -> 1 `i `uc ]
-[; ;LE1.c: 21: PORTB = 0X00;
-"21
-[e = _PORTB -> -> 0 `i `uc ]
-[; ;LE1.c: 24: if (RA0 == 0x01){
+[; ;LE1.c: 22: TRISA = 0x00;
+"22
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;LE1.c: 24: while (1) {
 "24
-[e $ ! == -> _RA0 `i -> 1 `i 97  ]
-{
-[; ;LE1.c: 25: for (int i = 0; i < 3; i++){
-"25
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 3 `i 98  ]
-[e $U 99  ]
-[e :U 98 ]
-{
-[; ;LE1.c: 26: for (cnt = 0; cnt < 10000; cnt++);
-"26
-{
-[e = _cnt -> 0 `i ]
-[e $ < _cnt -> 10000 `i 101  ]
-[e $U 102  ]
-[e :U 101 ]
-[e ++ _cnt -> 1 `i ]
-[e $ < _cnt -> 10000 `i 101  ]
-[e :U 102 ]
-}
-[; ;LE1.c: 27: PORTB = 0x01;
-"27
-[e = _PORTB -> -> 1 `i `uc ]
-[; ;LE1.c: 28: for (cnt = 0; cnt < 10000; cnt++);
-"28
-{
-[e = _cnt -> 0 `i ]
-[e $ < _cnt -> 10000 `i 104  ]
-[e $U 105  ]
-[e :U 104 ]
-[e ++ _cnt -> 1 `i ]
-[e $ < _cnt -> 10000 `i 104  ]
 [e :U 105 ]
-}
-[; ;LE1.c: 29: PORTB = 0x00;
-"29
-[e = _PORTB -> -> 0 `i `uc ]
-"30
-}
+{
+[; ;LE1.c: 25: PORTA = 0x01;
 "25
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 3 `i 98  ]
-[e :U 99 ]
-"30
+[e = _PORTA -> -> 1 `i `uc ]
+[; ;LE1.c: 26: delay(10);
+"26
+[e ( _delay (1 -> -> 10 `i `uc ]
+[; ;LE1.c: 27: PORTA = 0x00;
+"27
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;LE1.c: 28: delay(10);
+"28
+[e ( _delay (1 -> -> 10 `i `uc ]
+"29
 }
-"31
-}
-[e :U 97 ]
+[e :U 104 ]
+"24
+[e $U 105  ]
+[e :U 106 ]
+[; ;LE1.c: 29: }
 [; ;LE1.c: 30: }
-[; ;LE1.c: 31: }
-[; ;LE1.c: 32: }
-"32
-[e :UE 96 ]
+"30
+[e :UE 103 ]
 }

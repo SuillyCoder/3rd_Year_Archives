@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-                                                                                                           Thu Feb 19 19:12:51 2026
+                                                                                                           Sat Mar 14 20:38:58 2026
 
 
      1                           
@@ -103,9 +103,9 @@ Microchip Technology PIC Macro Assembler V1.33 build 59893
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                               Thu Feb 19 19:12:51 2026
+Symbol Table                                                                                               Sat Mar 14 20:38:58 2026
 
-               ___sp 0000                 _main 078C                 start 0000               stackhi 0000  
+               ___sp 0000                 _main 07B4                 start 0000               stackhi 0000  
              stacklo 0000  start_initialization 07FC             ___int_sp 0000             intlevel0 0000  
            intlevel1 0000             intlevel2 0000             intlevel3 0000             intlevel4 0000  
            intlevel5 0000             reset_vec 0000  

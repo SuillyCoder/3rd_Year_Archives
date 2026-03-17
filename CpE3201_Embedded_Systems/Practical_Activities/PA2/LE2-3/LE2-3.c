@@ -50,34 +50,54 @@ void main(void){
     TRISD  = 0xFF; // PORTD as input (keypad encoder)
     
     initLCD();
-    instCtrl(0x80);
 
+	unsigned char rowAddr[4] = {0x00, 0x40, 0x14, 0x54};
 	int chars = 0;
+
+    instCtrl(0x80);
 
     while(1){
         while (!RD4){} // Wait until a key is pressed (DA high ? inverted low at RD4)
 
         DATA = PORTD & 0x0F; // Read key value
 
+		unsigned char ch = 0;
+        int valid = 1;
+
         switch(DATA){
-            case 0x00: dataCtrl('1'); instCtrl(0x14); chars++; break; 
-            case 0x01: dataCtrl('2'); instCtrl(0x14); chars++; break; 
-            case 0x02: dataCtrl('3'); instCtrl(0x14); chars++; break; 
-            case 0x04: dataCtrl('4'); instCtrl(0x14); chars++; break; 
-            case 0x05: dataCtrl('5'); instCtrl(0x14); chars++; break; 
-            case 0x06: dataCtrl('6'); instCtrl(0x14); chars++; break; 
-            case 0x08: dataCtrl('7'); instCtrl(0x14); chars++; break; 
-            case 0x09: dataCtrl('8'); instCtrl(0x14); chars++; break; 
-            case 0x0A: dataCtrl('9'); instCtrl(0x14); chars++; break; 
-            case 0x0C: dataCtrl('*'); instCtrl(0x14); chars++; break; 
-            case 0x0D: dataCtrl('0'); instCtrl(0x14); chars++; break; 
-            case 0x0E: dataCtrl('#'); instCtrl(0x14); chars++; break; 
+            case 0x00: ch = '1'; break;
+            case 0x01: ch = '2'; break;
+            case 0x02: ch = '3'; break;
+            case 0x04: ch = '4'; break;
+            case 0x05: ch = '5'; break;
+            case 0x06: ch = '6'; break;
+            case 0x08: ch = '7'; break;
+            case 0x09: ch = '8'; break;
+            case 0x0A: ch = '9'; break;
+            case 0x0C: ch = '*'; break;
+            case 0x0D: ch = '0'; break;
+            case 0x0E: ch = '#'; break;
+            default:   valid = 0; break;
         }
 
-		if (chars == 21){
-			instCtrl(0x01); //Clear the display if the LCD is full.
-			chars = 0;
-		}
+	  	if (valid){
+            // If starting a new row, manually set the cursor
+            if (chars % 20 == 0){
+                int row = chars / 20;  // 0..3
+                instCtrl(0x80 | rowAddr[row]);
+            }
+
+            dataCtrl(ch);  // No instCtrl(0x14) here!
+            chars++;
+
+            if (chars == 80){
+                instCtrl(0x01); // Clear display
+                chars = 0;
+                delay(2);       // Let clear command finish
+                instCtrl(0x80); // Return to row 1
+            }
+        }
+
 
         delay(50);           // Short debounce delay
         while (!RD4){}       // Wait for key release before next read
