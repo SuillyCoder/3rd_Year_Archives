@@ -1,0 +1,28 @@
+NOTES FOR RUNNING THE MODEL PROGRAM
+
+1. Python Version Requirement
+	TensorFlow only supports Python 3.12 and below. 
+	Python 3.13 and 3.14 are NOT supported and will 
+	cause installation to fail. We recommend using Python 3.11.
+
+2. Installing Python 3.11
+	Go to: https://www.python.org/downloads/release/python-3119/
+	Download the Windows installer (64-bit) — use the direct .exe, NOT the Microsoft Store version.
+	On the first screen of the installer, check "Add python.exe to PATH" before clicking Install Now.
+	Verify installation by opening PowerShell and running:   py -3.11 --version
+
+3. Installing Dependencies
+	Run this following commands in PowerShell to install all required packages under Python 3.11:
+
+	py -3.11 -m pip install tensorflow matplotlib numpy
+
+4. Running the Program
+	Click on the run button in Visual Studio Code
+
+	The model will train for 10 epochs. A plot window will appear 
+	showing training vs. validation loss — close it to continue to the prediction output.
+
+5. Notes
+	If using VS Code, select Python 3.11 as the interpreter via Ctrl+Shift+P → "Python: Select Interpreter".
+	Always use py -3.11 instead of python if you have multiple Python versions installed.
+	The model runs on CPU by default (no GPU required).
