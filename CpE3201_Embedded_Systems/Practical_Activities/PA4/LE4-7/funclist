@@ -1,0 +1,10 @@
+_updatePWM: CODE, 1932 0 110
+__stringtab: STRING, 3 0 6
+_dutyTable: STRING, 9 0 5
+_main: CODE, 1838 0 94
+__initialization: CODE, 2042 0 2
+___lwdiv: CODE, 1776 0 62
+_delay_ms: CODE, 1737 0 39
+_pr2Table: STRING, 14 0 3
+___wmul: CODE, 1702 0 35
+Total: 356
