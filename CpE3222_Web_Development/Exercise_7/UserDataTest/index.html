@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <h1> REGISTRATION </h1>
+        <!--- NOTE: POST IS A PREFFERED METHOD -->
+        <form action = "register.php" method="post">
+            Name: <input name="name" type="text">
+            <br><br>
+            Attendee Type: 
+            <input name="atttype" type="radio" value="Professional">Professional
+            <input name="atttype" type="radio" value="Student">Student
+            <br><br>
+
+            Organization Type: 
+            <select name="orgtype">
+                <option value="Academe">Academe</option>
+                <option value="Industry">Industry</option>
+            </select>
+            <br><br>
+            <input type="submit" value="register">
+        </form>
+    </body>
+</html>
