@@ -1528,7 +1528,7 @@ for(;;){
 if(newCapture){
 newCapture = 0;
 
-unsigned int period_ms = ((capturedPeriod * 8) / 1000)*2;
+unsigned int period_ms = (capturedPeriod / 1000) * 8;
 displayPeriod(period_ms);
 }
 }

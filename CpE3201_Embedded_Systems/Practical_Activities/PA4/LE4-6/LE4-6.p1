@@ -1375,8 +1375,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _newCapture -> -> 0 `i `uc ]
 "103
 [v _period_ms `ui ~T0 @X0 1 a ]
-[; ;LE4-6.c: 103: unsigned int period_ms = ((capturedPeriod * 8) / 1000)*2;
-[e = _period_ms * / * _capturedPeriod -> -> 8 `i `ui -> -> 1000 `i `ui -> -> 2 `i `ui ]
+[; ;LE4-6.c: 103: unsigned int period_ms = (capturedPeriod / 1000) * 8;
+[e = _period_ms * / _capturedPeriod -> -> 1000 `i `ui -> -> 8 `i `ui ]
 [; ;LE4-6.c: 104: displayPeriod(period_ms);
 "104
 [e ( _displayPeriod (1 _period_ms ]

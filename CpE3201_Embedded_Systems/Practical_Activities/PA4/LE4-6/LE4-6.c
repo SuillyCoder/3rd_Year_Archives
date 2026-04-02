@@ -100,7 +100,7 @@ void main(void){
         if(newCapture){
             newCapture = 0;
             // Each TMR1 tick = 8us, normalize: divide by 1000, multiply by 8
-            unsigned int period_ms = ((capturedPeriod * 8) / 1000)*2;
+           unsigned int period_ms = (capturedPeriod / 1000) * 8;
             displayPeriod(period_ms);
         }
     }

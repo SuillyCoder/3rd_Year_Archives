@@ -1,12 +1,47 @@
 Version 3.2 HI-TECH Software Intermediate Code
 "2663 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
 [v _TMR2ON `Vb ~T0 @X0 0 e@146 ]
+"878
+[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"2535
+[v _RC2 `Vb ~T0 @X0 0 e@58 ]
+"715
+[v _T2CON `Vuc ~T0 @X0 0 e@18 ]
 "1768
 [v _PR2 `Vuc ~T0 @X0 0 e@146 ]
 "866
 [v _CCPR1L `Vuc ~T0 @X0 0 e@21 ]
-"878
-[v _CCP1CON `Vuc ~T0 @X0 0 e@23 ]
+"2705
+[v _TRISC2 `Vb ~T0 @X0 0 e@1082 ]
+"1580
+[s S65 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S65 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"1579
+[u S64 `S65 1 ]
+[n S64 . . ]
+"1591
+[v _PIE1bits `VS64 ~T0 @X0 0 e@140 ]
+"709
+[v _TMR2 `Vuc ~T0 @X0 0 e@17 ]
+"523
+[s S22 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S22 . TMR1IF TMR2IF CCP1IF SSPIF TXIF RCIF ADIF PSPIF ]
+"522
+[u S21 `S22 1 ]
+[n S21 . . ]
+"534
+[v _PIR1bits `VS21 ~T0 @X0 0 e@12 ]
+"446
+[s S19 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S19 . RBIF INTF TMR0IF RBIE INTE TMR0IE PEIE GIE ]
+"456
+[s S20 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S20 . . T0IF . T0IE ]
+"445
+[u S18 `S19 1 `S20 1 ]
+[n S18 . . . ]
+"463
+[v _INTCONbits `VS18 ~T0 @X0 0 e@11 ]
 [p mainexit ]
 "2173
 [v _ADCON1 `Vuc ~T0 @X0 0 e@159 ]
@@ -14,10 +49,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
 "1396
 [v _TRISC `Vuc ~T0 @X0 0 e@135 ]
-"2535
-[v _RC2 `Vb ~T0 @X0 0 e@58 ]
-"715
-[v _T2CON `Vuc ~T0 @X0 0 e@18 ]
 "2511
 [v _RB0 `Vb ~T0 @X0 0 e@48 ]
 "2513
@@ -1035,7 +1066,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 154: extern __nonreentrant void _delay(unsigned long);
-"3 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA4\LE4-6\LE4-7.c
+"3 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA4\LE4-7\LE4-7.c
 [p x FOSC=XT ]
 "4
 [p x WDTE=OFF ]
@@ -1051,17 +1082,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x WRT=OFF ]
 "10
 [p x CP=OFF ]
-"13
-[v _pr2Table `Cuc ~T0 @X0 -> 3 `i e ]
-[i _pr2Table
-:U ..
--> -> 249 `i `uc
--> -> 124 `i `uc
--> -> 62 `i `uc
-..
-]
-[; ;LE4-7.c: 13: const unsigned char pr2Table[3] = {249, 124, 62};
-"19
+"24
 [v _dutyTable `Cuc ~T0 @X0 -> 5 `i e ]
 [i _dutyTable
 :U ..
@@ -1069,42 +1090,66 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 25 `i `uc
 -> -> 50 `i `uc
 -> -> 75 `i `uc
--> -> 95 `i `uc
+-> -> 100 `i `uc
 ..
 ]
-[; ;LE4-7.c: 19: const unsigned char dutyTable[5] = {10, 25, 50, 75, 95};
-"21
+[; ;LE4-7.c: 24: const unsigned char dutyTable[5] = {10, 25, 50, 75, 100};
+"26
 [v _freqIdx `Vuc ~T0 @X0 1 e ]
 [i _freqIdx
 -> -> 0 `i `uc
 ]
-[; ;LE4-7.c: 21: volatile unsigned char freqIdx = 0;
-"22
+[; ;LE4-7.c: 26: volatile unsigned char freqIdx = 0;
+"27
 [v _dutyIdx `Vuc ~T0 @X0 1 e ]
 [i _dutyIdx
 -> -> 0 `i `uc
 ]
-[; ;LE4-7.c: 22: volatile unsigned char dutyIdx = 0;
-"24
+[; ;LE4-7.c: 27: volatile unsigned char dutyIdx = 0;
+"30
+[v _swPWM_active `Vuc ~T0 @X0 1 e ]
+[i _swPWM_active
+-> -> 0 `i `uc
+]
+[; ;LE4-7.c: 30: volatile unsigned char swPWM_active = 0;
+"31
+[v _swPWM_period `Vui ~T0 @X0 1 e ]
+[i _swPWM_period
+-> -> 0 `i `ui
+]
+[; ;LE4-7.c: 31: volatile unsigned int swPWM_period = 0;
+"32
+[v _swPWM_highTicks `Vui ~T0 @X0 1 e ]
+[i _swPWM_highTicks
+-> -> 0 `i `ui
+]
+[; ;LE4-7.c: 32: volatile unsigned int swPWM_highTicks = 0;
+"33
+[v _swPWM_tick `Vui ~T0 @X0 1 e ]
+[i _swPWM_tick
+-> -> 0 `i `ui
+]
+[; ;LE4-7.c: 33: volatile unsigned int swPWM_tick = 0;
+"35
 [v _delay_ms `(v ~T0 @X0 1 ef1`ui ]
 {
-[; ;LE4-7.c: 24: void delay_ms(unsigned int ms){
+[; ;LE4-7.c: 35: void delay_ms(unsigned int ms) {
 [e :U _delay_ms ]
 [v _ms `ui ~T0 @X0 1 r1 ]
 [f ]
-"25
+"36
 [v _i `ui ~T0 @X0 1 a ]
 [v _j `ui ~T0 @X0 1 a ]
-[; ;LE4-7.c: 25: unsigned int i, j;
-[; ;LE4-7.c: 26: for(i = ms; i != 0; i--)
-"26
+[; ;LE4-7.c: 36: unsigned int i, j;
+[; ;LE4-7.c: 37: for (i = ms; i != 0; i--)
+"37
 {
 [e = _i _ms ]
 [e $ != _i -> -> 0 `i `ui 97  ]
 [e $U 98  ]
-"27
+"38
 [e :U 97 ]
-[; ;LE4-7.c: 27: for(j = 0; j < 110; j++);
+[; ;LE4-7.c: 38: for (j = 0; j < 110; j++);
 {
 [e = _j -> -> 0 `i `ui ]
 [e $ < _j -> -> 110 `i `ui 100  ]
@@ -1114,173 +1159,299 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e $ < _j -> -> 110 `i `ui 100  ]
 [e :U 101 ]
 }
-"26
+"37
 [e -- _i -> -> 1 `i `ui ]
 [e $ != _i -> -> 0 `i `ui 97  ]
 [e :U 98 ]
-"27
+"38
 }
-[; ;LE4-7.c: 28: }
-"28
+[; ;LE4-7.c: 39: }
+"39
 [e :UE 96 ]
 }
-"30
+"41
 [v _updatePWM `(v ~T0 @X0 1 ef ]
 {
-[; ;LE4-7.c: 30: void updatePWM(void){
+[; ;LE4-7.c: 41: void updatePWM(void) {
 [e :U _updatePWM ]
 [f ]
-"31
-[v _pr2 `uc ~T0 @X0 1 a ]
-[; ;LE4-7.c: 31: unsigned char pr2 = pr2Table[freqIdx];
-[e = _pr2 *U + &U _pr2Table * -> _freqIdx `ux -> -> # *U &U _pr2Table `ui `ux ]
-"32
-[v _duty `uc ~T0 @X0 1 a ]
-[; ;LE4-7.c: 32: unsigned char duty = dutyTable[dutyIdx];
-[e = _duty *U + &U _dutyTable * -> _dutyIdx `ux -> -> # *U &U _dutyTable `ui `ux ]
-"33
-[v _dcVal `ui ~T0 @X0 1 a ]
-[; ;LE4-7.c: 33: unsigned int dcVal = ((unsigned int)duty * ((unsigned int)(pr2 + 1) * 4)) / 100;
-[e = _dcVal / * -> _duty `ui * -> + -> _pr2 `i -> 1 `i `ui -> -> 4 `i `ui -> -> 100 `i `ui ]
-[; ;LE4-7.c: 36: TMR2ON = 0;
-"36
-[e = _TMR2ON -> -> 0 `i `b ]
-[; ;LE4-7.c: 37: PR2 = pr2;
-"37
-[e = _PR2 _pr2 ]
-[; ;LE4-7.c: 38: CCPR1L = (unsigned char)(dcVal >> 2);
-"38
-[e = _CCPR1L -> >> _dcVal -> 2 `i `uc ]
-[; ;LE4-7.c: 40: CCP1CON = (unsigned char)(0x0C | ((dcVal & 0x03) << 4));
-"40
-[e = _CCP1CON -> | -> -> 12 `i `ui << & _dcVal -> -> 3 `i `ui -> 4 `i `uc ]
-[; ;LE4-7.c: 41: TMR2ON = 1;
-"41
-[e = _TMR2ON -> -> 1 `i `b ]
-[; ;LE4-7.c: 42: }
 "42
+[v _duty `uc ~T0 @X0 1 a ]
+[; ;LE4-7.c: 42: unsigned char duty = dutyTable[dutyIdx];
+[e = _duty *U + &U _dutyTable * -> _dutyIdx `ux -> -> # *U &U _dutyTable `ui `ux ]
+[; ;LE4-7.c: 44: TMR2ON = 0;
+"44
+[e = _TMR2ON -> -> 0 `i `b ]
+[; ;LE4-7.c: 45: CCP1CON = 0x00;
+"45
+[e = _CCP1CON -> -> 0 `i `uc ]
+[; ;LE4-7.c: 46: RC2 = 0;
+"46
+[e = _RC2 -> -> 0 `i `b ]
+[; ;LE4-7.c: 48: if (freqIdx == 0) {
+"48
+[e $ ! == -> _freqIdx `i -> 0 `i 104  ]
+{
+[; ;LE4-7.c: 51: swPWM_active = 0;
+"51
+[e = _swPWM_active -> -> 0 `i `uc ]
+"53
+[v _pr2 `ui ~T0 @X0 1 a ]
+[; ;LE4-7.c: 53: unsigned int pr2 = 249;
+[e = _pr2 -> -> 249 `i `ui ]
+"55
+[v _dcVal `ul ~T0 @X0 1 a ]
+[; ;LE4-7.c: 55: unsigned long dcVal = ((unsigned long)duty * ((unsigned long)(pr2 + 1) * 4)) / 100;
+[e = _dcVal / * -> _duty `ul * -> + _pr2 -> -> 1 `i `ui `ul -> -> -> 4 `i `l `ul -> -> -> 100 `i `l `ul ]
+[; ;LE4-7.c: 57: T2CON = 0x05;
+"57
+[e = _T2CON -> -> 5 `i `uc ]
+[; ;LE4-7.c: 58: PR2 = (unsigned char)pr2;
+"58
+[e = _PR2 -> _pr2 `uc ]
+[; ;LE4-7.c: 59: CCPR1L = (unsigned char)(dcVal >> 2);
+"59
+[e = _CCPR1L -> >> _dcVal -> 2 `i `uc ]
+[; ;LE4-7.c: 60: CCP1CON = (unsigned char)(0x0C | ((unsigned char)(dcVal & 0x03) << 4));
+"60
+[e = _CCP1CON -> | -> 12 `i << -> -> & _dcVal -> -> -> 3 `i `l `ul `uc `i -> 4 `i `uc ]
+[; ;LE4-7.c: 61: TRISC2 = 0;
+"61
+[e = _TRISC2 -> -> 0 `i `b ]
+[; ;LE4-7.c: 63: PIE1bits.TMR2IE = 0;
+"63
+[e = . . _PIE1bits 0 1 -> -> 0 `i `uc ]
+[; ;LE4-7.c: 64: TMR2ON = 1;
+"64
+[e = _TMR2ON -> -> 1 `i `b ]
+"66
+}
+[; ;LE4-7.c: 66: } else {
+[e $U 105  ]
+[e :U 104 ]
+{
+[; ;LE4-7.c: 69: swPWM_active = 1;
+"69
+[e = _swPWM_active -> -> 1 `i `uc ]
+"71
+[v _period `ui ~T0 @X0 1 a ]
+[; ;LE4-7.c: 71: unsigned int period = (freqIdx == 1) ? 20 : 200;
+[e = _period -> ? == -> _freqIdx `i -> 1 `i : -> 20 `i -> 200 `i `ui ]
+"72
+[v _highTicks `ui ~T0 @X0 1 a ]
+[; ;LE4-7.c: 72: unsigned int highTicks = ((unsigned long)duty * period) / 100;
+[e = _highTicks -> / * -> _duty `ul -> _period `ul -> -> -> 100 `i `l `ul `ui ]
+[; ;LE4-7.c: 73: if (duty == 100) highTicks = period;
+"73
+[e $ ! == -> _duty `i -> 100 `i 106  ]
+[e = _highTicks _period ]
+[e :U 106 ]
+[; ;LE4-7.c: 75: swPWM_period = period;
+"75
+[e = _swPWM_period _period ]
+[; ;LE4-7.c: 76: swPWM_highTicks = highTicks;
+"76
+[e = _swPWM_highTicks _highTicks ]
+[; ;LE4-7.c: 77: swPWM_tick = 0;
+"77
+[e = _swPWM_tick -> -> 0 `i `ui ]
+[; ;LE4-7.c: 79: CCP1CON = 0x00;
+"79
+[e = _CCP1CON -> -> 0 `i `uc ]
+[; ;LE4-7.c: 80: TRISC2 = 0;
+"80
+[e = _TRISC2 -> -> 0 `i `b ]
+[; ;LE4-7.c: 81: RC2 = 1;
+"81
+[e = _RC2 -> -> 1 `i `b ]
+[; ;LE4-7.c: 83: T2CON = 0x05;
+"83
+[e = _T2CON -> -> 5 `i `uc ]
+[; ;LE4-7.c: 84: PR2 = 124;
+"84
+[e = _PR2 -> -> 124 `i `uc ]
+[; ;LE4-7.c: 85: TMR2 = 0;
+"85
+[e = _TMR2 -> -> 0 `i `uc ]
+[; ;LE4-7.c: 87: PIR1bits.TMR2IF = 0;
+"87
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;LE4-7.c: 88: PIE1bits.TMR2IE = 1;
+"88
+[e = . . _PIE1bits 0 1 -> -> 1 `i `uc ]
+[; ;LE4-7.c: 89: INTCONbits.PEIE = 1;
+"89
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;LE4-7.c: 90: INTCONbits.GIE = 1;
+"90
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;LE4-7.c: 91: TMR2ON = 1;
+"91
+[e = _TMR2ON -> -> 1 `i `b ]
+"92
+}
+[e :U 105 ]
+[; ;LE4-7.c: 92: }
+[; ;LE4-7.c: 93: }
+"93
 [e :UE 103 ]
 }
-"44
-[v _main `(v ~T0 @X0 1 ef ]
+[v F1117 `(v ~T0 @X0 1 tf ]
+"96
+[v _isr `IF1117 ~T0 @X0 1 e ]
 {
-[; ;LE4-7.c: 44: void main(void){
-[e :U _main ]
+[; ;LE4-7.c: 96: void interrupt isr(void) {
+[e :U _isr ]
 [f ]
-[; ;LE4-7.c: 45: ADCON1 = 0x06;
-"45
-[e = _ADCON1 -> -> 6 `i `uc ]
-[; ;LE4-7.c: 46: TRISB = 0x03;
-"46
-[e = _TRISB -> -> 3 `i `uc ]
-[; ;LE4-7.c: 47: TRISC = 0x00;
-"47
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;LE4-7.c: 48: RC2 = 0;
-"48
-[e = _RC2 -> -> 0 `i `b ]
-[; ;LE4-7.c: 50: T2CON = 0x06;
-"50
-[e = _T2CON -> -> 6 `i `uc ]
-[; ;LE4-7.c: 51: updatePWM();
-"51
-[e ( _updatePWM ..  ]
-[; ;LE4-7.c: 53: for(;;)
-"53
+[; ;LE4-7.c: 97: if (PIR1bits.TMR2IF && PIE1bits.TMR2IE) {
+"97
+[e $ ! && != -> . . _PIR1bits 0 1 `i -> -> -> 0 `i `Vuc `i != -> . . _PIE1bits 0 1 `i -> -> -> 0 `i `Vuc `i 108  ]
 {
-"54
-[e :U 105 ]
-[; ;LE4-7.c: 54: {
+[; ;LE4-7.c: 98: PIR1bits.TMR2IF = 0;
+"98
+[e = . . _PIR1bits 0 1 -> -> 0 `i `uc ]
+[; ;LE4-7.c: 100: if (swPWM_active) {
+"100
+[e $ ! != -> _swPWM_active `i -> -> -> 0 `i `Vuc `i 109  ]
 {
-[; ;LE4-7.c: 55: if (RB0 == 1){
-"55
-[e $ ! == -> _RB0 `i -> 1 `i 108  ]
-{
-[; ;LE4-7.c: 57: delay_ms(50);
-"57
-[e ( _delay_ms (1 -> -> 50 `i `ui ]
-[; ;LE4-7.c: 58: if (RB0 == 1){
-"58
-[e $ ! == -> _RB0 `i -> 1 `i 109  ]
-{
-[; ;LE4-7.c: 59: freqIdx++;
-"59
-[e ++ _freqIdx -> -> 1 `i `uc ]
-[; ;LE4-7.c: 60: if (freqIdx > 2) freqIdx = 0;
-"60
-[e $ ! > -> _freqIdx `i -> 2 `i 110  ]
-[e = _freqIdx -> -> 0 `i `uc ]
+[; ;LE4-7.c: 101: swPWM_tick++;
+"101
+[e ++ _swPWM_tick -> -> 1 `i `ui ]
+[; ;LE4-7.c: 102: if (swPWM_tick >= swPWM_period)
+"102
+[e $ ! >= _swPWM_tick _swPWM_period 110  ]
+[; ;LE4-7.c: 103: swPWM_tick = 0;
+"103
+[e = _swPWM_tick -> -> 0 `i `ui ]
 [e :U 110 ]
-[; ;LE4-7.c: 61: updatePWM();
-"61
-[e ( _updatePWM ..  ]
-[; ;LE4-7.c: 62: while(RB0 == 1);
-"62
-[e $U 111  ]
-[e :U 112 ]
-[e :U 111 ]
-[e $ == -> _RB0 `i -> 1 `i 112  ]
-[e :U 113 ]
-[; ;LE4-7.c: 63: delay_ms(50);
-"63
-[e ( _delay_ms (1 -> -> 50 `i `ui ]
-"64
+[; ;LE4-7.c: 105: RC2 = (swPWM_tick < swPWM_highTicks) ? 1 : 0;
+"105
+[e = _RC2 -> ? < _swPWM_tick _swPWM_highTicks : -> 1 `i -> 0 `i `b ]
+"106
 }
 [e :U 109 ]
-"65
+"107
 }
-[; ;LE4-7.c: 64: }
-[; ;LE4-7.c: 65: }
-[e $U 114  ]
-"66
 [e :U 108 ]
-[; ;LE4-7.c: 66: else if (RB1 == 1){
-[e $ ! == -> _RB1 `i -> 1 `i 115  ]
+[; ;LE4-7.c: 106: }
+[; ;LE4-7.c: 107: }
+[; ;LE4-7.c: 108: }
+"108
+[e :UE 107 ]
+}
+"110
+[v _main `(v ~T0 @X0 1 ef ]
 {
-[; ;LE4-7.c: 68: delay_ms(50);
-"68
-[e ( _delay_ms (1 -> -> 50 `i `ui ]
-[; ;LE4-7.c: 69: if (RB1 == 1){
-"69
-[e $ ! == -> _RB1 `i -> 1 `i 116  ]
-{
-[; ;LE4-7.c: 70: dutyIdx++;
-"70
-[e ++ _dutyIdx -> -> 1 `i `uc ]
-[; ;LE4-7.c: 71: if (dutyIdx > 4) dutyIdx = 0;
-"71
-[e $ ! > -> _dutyIdx `i -> 4 `i 117  ]
-[e = _dutyIdx -> -> 0 `i `uc ]
-[e :U 117 ]
-[; ;LE4-7.c: 72: updatePWM();
-"72
+[; ;LE4-7.c: 110: void main(void) {
+[e :U _main ]
+[f ]
+[; ;LE4-7.c: 111: ADCON1 = 0x06;
+"111
+[e = _ADCON1 -> -> 6 `i `uc ]
+[; ;LE4-7.c: 112: TRISB = 0x03;
+"112
+[e = _TRISB -> -> 3 `i `uc ]
+[; ;LE4-7.c: 113: TRISC = 0x00;
+"113
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;LE4-7.c: 114: RC2 = 0;
+"114
+[e = _RC2 -> -> 0 `i `b ]
+[; ;LE4-7.c: 116: updatePWM();
+"116
 [e ( _updatePWM ..  ]
-[; ;LE4-7.c: 73: while(RB1 == 1);
-"73
+[; ;LE4-7.c: 118: for (;;) {
+"118
+{
+[e :U 112 ]
+{
+[; ;LE4-7.c: 119: if (RB0 == 1) {
+"119
+[e $ ! == -> _RB0 `i -> 1 `i 115  ]
+{
+[; ;LE4-7.c: 120: delay_ms(50);
+"120
+[e ( _delay_ms (1 -> -> 50 `i `ui ]
+[; ;LE4-7.c: 121: if (RB0 == 1) {
+"121
+[e $ ! == -> _RB0 `i -> 1 `i 116  ]
+{
+[; ;LE4-7.c: 122: freqIdx++;
+"122
+[e ++ _freqIdx -> -> 1 `i `uc ]
+[; ;LE4-7.c: 123: if (freqIdx > 2) freqIdx = 0;
+"123
+[e $ ! > -> _freqIdx `i -> 2 `i 117  ]
+[e = _freqIdx -> -> 0 `i `uc ]
+[e :U 117 ]
+[; ;LE4-7.c: 124: updatePWM();
+"124
+[e ( _updatePWM ..  ]
+[; ;LE4-7.c: 125: while (RB0 == 1);
+"125
 [e $U 118  ]
 [e :U 119 ]
 [e :U 118 ]
-[e $ == -> _RB1 `i -> 1 `i 119  ]
+[e $ == -> _RB0 `i -> 1 `i 119  ]
 [e :U 120 ]
-[; ;LE4-7.c: 74: delay_ms(50);
-"74
+[; ;LE4-7.c: 126: delay_ms(50);
+"126
 [e ( _delay_ms (1 -> -> 50 `i `ui ]
-"75
+"127
 }
 [e :U 116 ]
-"76
+"128
 }
+[; ;LE4-7.c: 127: }
+[; ;LE4-7.c: 128: } else if (RB1 == 1) {
+[e $U 121  ]
 [e :U 115 ]
-"77
-[e :U 114 ]
+[e $ ! == -> _RB1 `i -> 1 `i 122  ]
+{
+[; ;LE4-7.c: 129: delay_ms(50);
+"129
+[e ( _delay_ms (1 -> -> 50 `i `ui ]
+[; ;LE4-7.c: 130: if (RB1 == 1) {
+"130
+[e $ ! == -> _RB1 `i -> 1 `i 123  ]
+{
+[; ;LE4-7.c: 131: dutyIdx++;
+"131
+[e ++ _dutyIdx -> -> 1 `i `uc ]
+[; ;LE4-7.c: 132: if (dutyIdx > 4) dutyIdx = 0;
+"132
+[e $ ! > -> _dutyIdx `i -> 4 `i 124  ]
+[e = _dutyIdx -> -> 0 `i `uc ]
+[e :U 124 ]
+[; ;LE4-7.c: 133: updatePWM();
+"133
+[e ( _updatePWM ..  ]
+[; ;LE4-7.c: 134: while (RB1 == 1);
+"134
+[e $U 125  ]
+[e :U 126 ]
+[e :U 125 ]
+[e $ == -> _RB1 `i -> 1 `i 126  ]
+[e :U 127 ]
+[; ;LE4-7.c: 135: delay_ms(50);
+"135
+[e ( _delay_ms (1 -> -> 50 `i `ui ]
+"136
 }
-[; ;LE4-7.c: 75: }
-[; ;LE4-7.c: 76: }
-[; ;LE4-7.c: 77: }
-[e $U 105  ]
-[e :U 106 ]
+[e :U 123 ]
+"137
 }
-[; ;LE4-7.c: 78: }
-"78
-[e :UE 104 ]
+[e :U 122 ]
+"138
+[e :U 121 ]
+}
+[; ;LE4-7.c: 136: }
+[; ;LE4-7.c: 137: }
+[; ;LE4-7.c: 138: }
+[e $U 112  ]
+[e :U 113 ]
+}
+[; ;LE4-7.c: 139: }
+"139
+[e :UE 111 ]
 }

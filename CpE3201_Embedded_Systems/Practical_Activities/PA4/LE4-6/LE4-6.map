@@ -4,7 +4,7 @@ Linker command line:
 
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.33\dat\en_msgs.txt -cs \
   -h+LE4-6.sym --cmf=LE4-6.cmf -z -Q16F877A \
-  -oC:\Users\enzoa\AppData\Local\Temp\sgio.6 -MLE4-6.map -E1 -ver=XC8 \
+  -oC:\Users\enzoa\AppData\Local\Temp\se24.6 -MLE4-6.map -E1 -ver=XC8 \
   -ASTACK=0110h-016fh -pstack=STACK -ACONST=00h-0FFhx32 -ACODE=00h-07FFhx4 \
   -ASTRCODE=00h-01FFFh -AENTRY=00h-0FFhx32 -ASTRING=00h-0FFhx32 \
   -ACOMMON=070h-07Fh -ABANK0=020h-06Fh -ABANK1=0A0h-0EFh \
@@ -30,20 +30,20 @@ startup.obj     end_init                             12       12        3       
                 config                             2007     2007        1     400E       0
 LE4-6.obj       cinit                                15       15        7        8       0
                 intentry                              4        4        E        8       0
-                text9                               1EC      1EC       1E        8       0
-                text8                               11F      11F       40        8       0
-                text7                               196      196       36        8       0
-                text6                               15F      15F       37        8       0
-                text5                               247      247       10      46E       0
-                text4                               237      237       10      46E       0
+                text9                               1ED      1ED       1E        8       0
+                text8                               120      120       40        8       0
+                text7                               197      197       36        8       0
+                text6                               160      160       37        8       0
+                text5                               248      248       10      470       0
+                text4                               238      238       10      470       0
                 text3                                1C       1C       A5        8       0
-                text2                               20A      20A       1D        8       0
-                text1                               1CC      1CC       20        8       0
-                maintext                             C1       C1       5E        8       0
+                text2                               20B      20B       1D        8       0
+                text1                               1CD      1CD       20        8       0
+                maintext                             C1       C1       5F        8       0
                 cstackBANK0                          20       20       10       20       1
                 cstackCOMMON                         70       70        9       70       1
                 bssBANK0                             30       30        3       20       1
-                strings                             227      227       10      44E       0
+                strings                             228      228       10      450       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -55,23 +55,23 @@ TOTAL           Name                               Link     Load   Length     Sp
                 cinit                                15       15        7         0
                 intentry                              4        4        E         0
                 reset_vec                             0        0        3         0
-                text9                               1EC      1EC       1E         0
-                text8                               11F      11F       40         0
-                text7                               196      196       36         0
-                text6                               15F      15F       37         0
-                text5                               247      247       10         0
-                text4                               237      237       10         0
+                text9                               1ED      1ED       1E         0
+                text8                               120      120       40         0
+                text7                               197      197       36         0
+                text6                               160      160       37         0
+                text5                               248      248       10         0
+                text4                               238      238       10         0
                 text3                                1C       1C       A5         0
-                text2                               20A      20A       1D         0
-                text1                               1CC      1CC       20         0
-                maintext                             C1       C1       5E         0
+                text2                               20B      20B       1D         0
+                text1                               1CD      1CD       20         0
+                maintext                             C1       C1       5F         0
 
         CLASS   STRCODE        
 
         CLASS   ENTRY          
 
         CLASS   STRING         
-                strings                             227      227       10         0
+                strings                             228      228       10         0
 
         CLASS   COMMON         
                 cstackCOMMON                         70       70        9         1
@@ -111,11 +111,11 @@ TOTAL           Name                               Link     Load   Length     Sp
 SEGMENTS        Name                           Load    Length   Top    Selector   Space  Class     Delta
 
                 reset_vec                      000000  000003  000003         0       0  CODE        2
-                intentry                       000004  000223  000227         8       0  CODE        2
+                intentry                       000004  000224  000228         8       0  CODE        2
                 cstackBANK0                    000020  000013  000033        20       1  BANK0       1
                 cstackCOMMON                   000070  000009  000079        70       1  COMMON      1
-                strings                        000227  000010  000237       44E       0  STRING      2
-                text4                          000237  000020  000257       46E       0  CODE        2
+                strings                        000228  000010  000238       450       0  STRING      2
+                text4                          000238  000020  000258       470       0  CODE        2
                 config                         002007  000001  002008      400E       0  CONFIG      2
 
 
@@ -127,13 +127,13 @@ UNUSED ADDRESS RANGES
         BANK2            0110-016F             60           1
         BANK3            0190-01EF             60           1
         CODE             0003-0003              1           2
-                         0257-1FFF            800
+                         0258-1FFF            800
         COMMON           0079-007D              5           1
         CONST            0003-0003              1           2
-                         0257-1FFF            100
+                         0258-1FFF            100
         EEDATA           2100-21FF            100           2
         ENTRY            0003-0003              1           2
-                         0257-1FFF            100
+                         0258-1FFF            100
         IDLOC            2000-2003              4           2
         RAM              0033-006F             3D           1
                          00A0-00EF             50
@@ -145,9 +145,9 @@ UNUSED ADDRESS RANGES
         SFR3             0180-018F             10           1
         STACK            0110-016F             60           1
         STRCODE          0003-0003              1           2
-                         0257-1FFF           1DA9
+                         0258-1FFF           1DA8
         STRING           0003-0003              1           2
-                         0257-1FFF            100
+                         0258-1FFF            100
 
                                   Symbol Table
 
@@ -159,7 +159,7 @@ _CCP1IE                  (abs)        0462
 _CCP1IF                  (abs)        0062
 _CCPR1                   (abs)        0015
 _GIE                     (abs)        005F
-_ISR                     text9        01EC
+_ISR                     text9        01ED
 _PEIE                    (abs)        005E
 _PORTB                   (abs)        0006
 _RA0                     (abs)        0028
@@ -255,45 +255,45 @@ __S2                     (abs)        0000
 __S3                     (abs)        0000
 ___int_sp                stack        0000
 ___latbits               (abs)        0002
-___lwdiv                 text8        011F
+___lwdiv                 text8        0120
 ___lwdiv@counter         cstackBANK0  0029
 ___lwdiv@dividend        cstackBANK0  0024
 ___lwdiv@divisor         cstackBANK0  0022
 ___lwdiv@quotient        cstackBANK0  0027
-___lwmod                 text7        0196
+___lwmod                 text7        0197
 ___lwmod@counter         cstackBANK0  0021
 ___lwmod@dividend        cstackCOMMON 0077
 ___lwmod@divisor         cstackCOMMON 0075
 ___sp                    stack        0000
-__end_of_ISR             text9        020A
-__end_of___lwdiv         text8        015F
-__end_of___lwmod         text7        01CC
+__end_of_ISR             text9        020B
+__end_of___lwdiv         text8        0160
+__end_of___lwmod         text7        01CD
 __end_of__initialization cinit        0018
-__end_of__stringdata     strings      0237
-__end_of__stringtab      strings      022D
-__end_of_dataCtrl        text5        0257
-__end_of_delay           text6        0196
+__end_of__stringdata     strings      0238
+__end_of__stringtab      strings      022E
+__end_of_dataCtrl        text5        0258
+__end_of_delay           text6        0197
 __end_of_displayPeriod   text3        00C1
-__end_of_initLCD         text2        0227
-__end_of_instCtrl        text4        0247
-__end_of_main            maintext     011F
-__end_of_printStr        text1        01EC
+__end_of_initLCD         text2        0228
+__end_of_instCtrl        text4        0248
+__end_of_main            maintext     0120
+__end_of_printStr        text1        01ED
 __initialization         cinit        0015
 __pbssBANK0              bssBANK0     0030
 __pcstackBANK0           cstackBANK0  0020
 __pcstackCOMMON          cstackCOMMON 0070
 __pintentry              intentry     0004
 __pmaintext              maintext     00C1
-__pstrings               strings      0227
-__ptext1                 text1        01CC
-__ptext2                 text2        020A
+__pstrings               strings      0228
+__ptext1                 text1        01CD
+__ptext2                 text2        020B
 __ptext3                 text3        001C
-__ptext4                 text4        0237
-__ptext5                 text5        0247
-__ptext6                 text6        015F
-__ptext7                 text7        0196
-__ptext8                 text8        011F
-__ptext9                 text9        01EC
+__ptext4                 text4        0238
+__ptext5                 text5        0248
+__ptext6                 text6        0160
+__ptext7                 text7        0197
+__ptext8                 text8        0120
+__ptext9                 text9        01ED
 __size_of_ISR            (abs)        0000
 __size_of___lwdiv        (abs)        0000
 __size_of___lwmod        (abs)        0000
@@ -304,18 +304,18 @@ __size_of_initLCD        (abs)        0000
 __size_of_instCtrl       (abs)        0000
 __size_of_main           (abs)        0000
 __size_of_printStr       (abs)        0000
-__stringbase             strings      022C
-__stringdata             strings      022D
-__stringtab              strings      0227
+__stringbase             strings      022D
+__stringdata             strings      022E
+__stringtab              strings      0228
 _capturedPeriod          bssBANK0     0030
-_dataCtrl                text5        0247
-_delay                   text6        015F
+_dataCtrl                text5        0248
+_delay                   text6        0160
 _displayPeriod           text3        001C
-_initLCD                 text2        020A
-_instCtrl                text4        0237
+_initLCD                 text2        020B
+_instCtrl                text4        0238
 _main                    maintext     00C1
 _newCapture              bssBANK0     0032
-_printStr                text1        01CC
+_printStr                text1        01CD
 btemp                    (abs)        007E
 dataCtrl@INST            cstackCOMMON 0077
 delay@cnt                cstackBANK0  0020
@@ -684,31 +684,31 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
-		___lwmod       		CODE           	0196	0000	54
+		___lwmod       		CODE           	0197	0000	54
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c estimated size: 54
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
-		___lwdiv       		CODE           	011F	0000	64
+		___lwdiv       		CODE           	0120	0000	64
 
 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c estimated size: 64
 
 shared
-		__stringtab    		STRING         	0227	0000	6
-		__stringdata   		STRING         	022D	0000	10
+		__stringtab    		STRING         	0228	0000	6
+		__stringdata   		STRING         	022E	0000	10
 		__initializatio		CODE           	0015	0000	3
 
 shared estimated size: 19
 
 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA4\LE4-6\LE4-6.c
-		_printStr      		CODE           	01CC	0000	32
-		_delay         		CODE           	015F	0000	55
-		_ISR           		CODE           	01EC	0000	30
-		_main          		CODE           	00C1	0000	94
+		_printStr      		CODE           	01CD	0000	32
+		_delay         		CODE           	0160	0000	55
+		_ISR           		CODE           	01ED	0000	30
+		_main          		CODE           	00C1	0000	95
 		_displayPeriod 		CODE           	001C	0000	165
-		_instCtrl      		CODE           	0237	0000	16
-		_dataCtrl      		CODE           	0247	0000	16
-		_initLCD       		CODE           	020A	0000	29
+		_instCtrl      		CODE           	0238	0000	16
+		_dataCtrl      		CODE           	0248	0000	16
+		_initLCD       		CODE           	020B	0000	29
 
-C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA4\LE4-6\LE4-6.c estimated size: 437
+C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA4\LE4-6\LE4-6.c estimated size: 438
 

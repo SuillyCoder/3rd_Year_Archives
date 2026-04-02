@@ -30,13 +30,12 @@ file_000=no
 [OTHER_FILES]
 file_000=no
 [FILE_INFO]
-file_000=C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA4\LE4-6\LE4-7.c
+file_000=LE4-7.c
 [SUITE_INFO]
 suite_guid={38171385-97B2-4EC5-BF2C-C2C027BA5B04}
 suite_state=
 [TOOL_SETTINGS]
-TS{F42384DA-C7ED-4A02-880F-0F5E88735CE2}= C9=1
-TS{F42384DA-C7ED-4A02-880F-0F5E88735CE2}_alt=yes
+TS{F42384DA-C7ED-4A02-880F-0F5E88735CE2}=C9=1
 [INSTRUMENTED_TRACE]
 enable=0
 transport=0

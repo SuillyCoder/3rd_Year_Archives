@@ -726,15 +726,25 @@ l836:
 	line	103
 	
 l838:	
-;LE4-6.c: 103: unsigned int period_ms = ((capturedPeriod * 8) / 1000)*2;
+;LE4-6.c: 103: unsigned int period_ms = (capturedPeriod / 1000) * 8;
 	movlw	low(03E8h)
 	movwf	(___lwdiv@divisor)
 	movlw	high(03E8h)
 	movwf	((___lwdiv@divisor))+1
 	movf	(_capturedPeriod+1),w	;volatile
-	movwf	(??_main+0)+0+1
+	clrf	(___lwdiv@dividend+1)
+	addwf	(___lwdiv@dividend+1)
 	movf	(_capturedPeriod),w	;volatile
+	clrf	(___lwdiv@dividend)
+	addwf	(___lwdiv@dividend)
+
+	fcall	___lwdiv
+	bcf	status, 5	;RP0=0, select bank0
+	bcf	status, 6	;RP1=0, select bank0
+	movf	(0+?___lwdiv),w
 	movwf	(??_main+0)+0
+	movf	(1+?___lwdiv),w
+	movwf	((??_main+0)+0+1)
 	clrc
 	rlf	(??_main+0)+0,f
 	rlf	(??_main+0)+1,f
@@ -745,17 +755,9 @@ l838:
 	rlf	(??_main+0)+0,f
 	rlf	(??_main+0)+1,f
 	movf	0+(??_main+0)+0,w
-	movwf	(___lwdiv@dividend)
-	movf	1+(??_main+0)+0,w
-	movwf	(___lwdiv@dividend+1)
-	fcall	___lwdiv
-	clrc
-	bcf	status, 5	;RP0=0, select bank0
-	bcf	status, 6	;RP1=0, select bank0
-	rlf	(0+(?___lwdiv)),w
 	movwf	(main@period_ms)
-	rlf	(1+(?___lwdiv)),w
-	movwf	1+(main@period_ms)
+	movf	1+(??_main+0)+0,w
+	movwf	(main@period_ms+1)
 	line	104
 	
 l840:	
