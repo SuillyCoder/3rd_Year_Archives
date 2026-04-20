@@ -1437,7 +1437,7 @@ extern __nonreentrant void _delay(unsigned long);
 #pragma config CP = OFF
 
 # 24
-const unsigned char dutyTable[5] = {10, 25, 50, 75, 100};
+const unsigned char dutyTable[5] = {10, 25, 50, 75, 90};
 
 volatile unsigned char freqIdx = 0;
 volatile unsigned char dutyIdx = 0;

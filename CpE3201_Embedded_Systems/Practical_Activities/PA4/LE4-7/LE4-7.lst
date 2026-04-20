@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
-                                                                                               Thu Apr 02 21:31:29 2026
+                                                                                               Tue Apr 14 09:06:42 2026
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 59893
      1                           	processor	16F877A
@@ -102,7 +102,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 59893
     96  0295  3419               	retlw	25
     97  0296  3432               	retlw	50
     98  0297  344B               	retlw	75
-    99  0298  3464               	retlw	100
+    99  0298  345A               	retlw	90
    100  0299                     __end_of_dutyTable:	
    101  0017                     _CCP1CON	set	23
    102  0015                     _CCPR1L	set	21
@@ -1444,7 +1444,7 @@ DATA                 0      0      3E      12        0.0%
 
 
 Microchip Technology PIC Macro Assembler V1.33 build 59893 
-Symbol Table                                                                                   Thu Apr 02 21:31:29 2026
+Symbol Table                                                                                   Tue Apr 14 09:06:42 2026
 
                       pc 0002              __CFG_CP$OFF 0000                       l62 010B  
                      l83 01EA                       l76 01BD                       fsr 0004  

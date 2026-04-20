@@ -14,14 +14,14 @@
 // 100  Hz  ? software PWM via ISR. Base tick = 500µs (2kHz). Period = 20 ticks.
 // 10   Hz  ? software PWM via ISR. Base tick = 500µs (2kHz). Period = 200 ticks.
 
-// For software PWM base: 4MHz, prescaler 1:1, PR2=249 ? 4MHz/(4*1*250)=4000Hz tick? 
+// For software PWM base: 4MHz, prescaler 1:1, PR2=249 ? 4MHz/(4*1*250)=4000Hz tick?
 // Let's use prescaler 1:4, PR2=124 ? 4MHz/(4*4*125) = 2000 Hz tick (500µs). Perfect.
 
 // Mode 0: 1kHz hardware PWM  ? T2CON=0x04 (prescale 1:1), PR2=249
 // Mode 1: 100Hz software PWM ? T2CON=0x05 (prescale 1:4), PR2=124, 20 ticks/period
 // Mode 2: 10Hz  software PWM ? T2CON=0x05 (prescale 1:4), PR2=124, 200 ticks/period
 
-const unsigned char dutyTable[5] = {10, 25, 50, 75, 100};
+const unsigned char dutyTable[5] = {10, 25, 50, 75, 90};
 
 volatile unsigned char freqIdx = 0;
 volatile unsigned char dutyIdx = 0;

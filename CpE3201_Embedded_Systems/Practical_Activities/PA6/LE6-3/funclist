@@ -1,0 +1,7 @@
+__stringtab: STRING, 3 0 6
+__stringdata: STRING, 9 0 168
+_main: CODE, 1879 0 165
+_sendString: CODE, 1848 0 31
+__initialization: CODE, 2044 0 0
+_sendChar: CODE, 1840 0 8
+Total: 378

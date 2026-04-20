@@ -194,7 +194,7 @@ _dutyTable:
 	retlw	019h
 	retlw	032h
 	retlw	04Bh
-	retlw	064h
+	retlw	05Ah
 	global __end_of_dutyTable
 __end_of_dutyTable:
 	global	_dutyTable

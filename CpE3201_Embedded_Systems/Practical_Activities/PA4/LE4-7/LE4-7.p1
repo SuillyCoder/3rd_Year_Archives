@@ -1090,10 +1090,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 25 `i `uc
 -> -> 50 `i `uc
 -> -> 75 `i `uc
--> -> 100 `i `uc
+-> -> 90 `i `uc
 ..
 ]
-[; ;LE4-7.c: 24: const unsigned char dutyTable[5] = {10, 25, 50, 75, 100};
+[; ;LE4-7.c: 24: const unsigned char dutyTable[5] = {10, 25, 50, 75, 90};
 "26
 [v _freqIdx `Vuc ~T0 @X0 1 e ]
 [i _freqIdx
