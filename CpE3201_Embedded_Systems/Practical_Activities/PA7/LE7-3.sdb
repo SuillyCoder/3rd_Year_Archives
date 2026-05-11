@@ -1,0 +1,420 @@
+[p LITE_MODE AUTOSTATIC PIC14 PICREGULAR PICMID ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 16F877A ]
+[d frameptr 6 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"5 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"42 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"18 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"35 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul24.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\eeprom.c
+[v _eecpymem eecpymem `(v  1 e 0 0 ]
+"24
+[v _memcpyee memcpyee `(v  1 e 0 0 ]
+"48
+[v ___eetoc __eetoc `(uc  1 e 1 0 ]
+"56
+[v ___eetoi __eetoi `(ui  1 e 2 0 ]
+"64
+[v ___eetom __eetom `(um  1 e 3 0 ]
+"72
+[v ___eetol __eetol `(ul  1 e 4 0 ]
+"80
+[v ___ctoee __ctoee `(uc  1 e 1 0 ]
+"87
+[v ___itoee __itoee `(ui  1 e 2 0 ]
+"94
+[v ___mtoee __mtoee `(um  1 e 3 0 ]
+"101
+[v ___ltoee __ltoee `(ul  1 e 4 0 ]
+"108
+[v ___eetoft __eetoft `(f  1 e 3 0 ]
+"116
+[v ___eetofl __eetofl `(d  1 e 3 0 ]
+"124
+[v ___fttoee __fttoee `(f  1 e 3 0 ]
+"131
+[v ___fltoee __fltoee `(d  1 e 3 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"39 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA7\LE7-3.c
+[v _delay_ms delay_ms `(v  1 e 0 0 ]
+"47
+[v _dataCtrl dataCtrl `(v  1 e 0 0 ]
+"56
+[v _instCtrl instCtrl `(v  1 e 0 0 ]
+"65
+[v _lcd_print lcd_print `(v  1 e 0 0 ]
+"71
+[v _initLCD initLCD `(v  1 e 0 0 ]
+"86
+[v _dispRH dispRH `(v  1 e 0 0 ]
+"93
+[v _dispT dispT `(v  1 e 0 0 ]
+"102
+[v _init_I2C_Master init_I2C_Master `(v  1 e 0 0 ]
+"111
+[v _I2C_Wait I2C_Wait `(v  1 e 0 0 ]
+"116
+[v _I2C_Start I2C_Start `(v  1 e 0 0 ]
+"121
+[v _I2C_Stop I2C_Stop `(v  1 e 0 0 ]
+"126
+[v _I2C_RepeatedStart I2C_RepeatedStart `(v  1 e 0 0 ]
+"131
+[v _I2C_Send I2C_Send `(v  1 e 0 0 ]
+"136
+[v _I2C_Receive I2C_Receive `(uc  1 e 1 0 ]
+"149
+[v _main main `(v  1 e 0 0 ]
+"207 C:\Program Files (x86)\Microchip\xc8\v1.33\include\pic16f877a.h
+[v _PORTB PORTB `VEuc  1 e 1 @6 ]
+"329
+[v _PORTD PORTD `VEuc  1 e 1 @8 ]
+"785
+[v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
+"791
+[v _SSPCON SSPCON `VEuc  1 e 1 @20 ]
+"1335
+[v _TRISB TRISB `VEuc  1 e 1 @134 ]
+"1457
+[v _TRISD TRISD `VEuc  1 e 1 @136 ]
+"1707
+[v _SSPCON2 SSPCON2 `VEuc  1 e 1 @145 ]
+"1774
+[v _SSPADD SSPADD `VEuc  1 e 1 @147 ]
+"1780
+[v _SSPSTAT SSPSTAT `VEuc  1 e 1 @148 ]
+"2231
+[v _EEDATA EEDATA `VEuc  1 e 1 @268 ]
+"2237
+[v _EEADR EEADR `VEuc  1 e 1 @269 ]
+"2255
+[v _EECON1 EECON1 `VEuc  1 e 1 @396 ]
+"2299
+[v _EECON2 EECON2 `VEuc  1 e 1 @397 ]
+"2311
+[v _ACKDT ACKDT `VEb  1 e 0 @1165 ]
+"2313
+[v _ACKEN ACKEN `VEb  1 e 0 @1164 ]
+"2349
+[v _CARRY CARRY `VEb  1 e 0 @24 ]
+"2441
+[v _GIE GIE `VEb  1 e 0 @95 ]
+"2483
+[v _PEN PEN `VEb  1 e 0 @1162 ]
+"2553
+[v _RCEN RCEN `VEb  1 e 0 @1163 ]
+"2559
+[v _RD RD `VEb  1 e 0 @3168 ]
+"2561
+[v _RD0 RD0 `VEb  1 e 0 @64 ]
+"2563
+[v _RD1 RD1 `VEb  1 e 0 @65 ]
+"2565
+[v _RD2 RD2 `VEb  1 e 0 @66 ]
+"2589
+[v _RSEN RSEN `VEb  1 e 0 @1161 ]
+"2599
+[v _SEN SEN `VEb  1 e 0 @1160 ]
+"2707
+[v _TRISC3 TRISC3 `VEb  1 e 0 @1083 ]
+"2709
+[v _TRISC4 TRISC4 `VEb  1 e 0 @1084 ]
+"2759
+[v _WR WR `VEb  1 e 0 @3169 ]
+"2761
+[v _WREN WREN `VEb  1 e 0 @3170 ]
+"354 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+[v _dpowers dpowers `DCC[5]ui  1 s 10 dpowers ]
+"17 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA7\LE7-3.c
+[v _RH RH `i  1 e 2 0 ]
+"18
+[v _T T `i  1 e 2 0 ]
+"149
+[v _main main `(v  1 e 0 0 ]
+{
+"152
+[v main@T_raw T_raw `ui  1 a 2 65 ]
+[v main@RH_raw RH_raw `ui  1 a 2 63 ]
+"151
+[v main@lsb lsb `uc  1 a 1 68 ]
+[v main@msb msb `uc  1 a 1 67 ]
+"196
+} 0
+"102
+[v _init_I2C_Master init_I2C_Master `(v  1 e 0 0 ]
+{
+"109
+} 0
+"71
+[v _initLCD initLCD `(v  1 e 0 0 ]
+{
+"83
+} 0
+"93
+[v _dispT dispT `(v  1 e 0 0 ]
+{
+"94
+[v dispT@buffer buffer `[10]uc  1 a 10 16 ]
+"98
+} 0
+"86
+[v _dispRH dispRH `(v  1 e 0 0 ]
+{
+"87
+[v dispRH@buffer buffer `[10]uc  1 a 10 16 ]
+"91
+} 0
+"492 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[s S112 . 4 `*.1DCCuc 1 _cp 2 0 `ui 1 _len 2 2 ]
+"533
+[u S115 . 4 `ui 1 _val 2 0 `S112 1 _str 4 0 ]
+[v sprintf@_val _val `S115  1 a 4 9 ]
+"499
+[v sprintf@c c `c  1 a 1 14 ]
+"506
+[v sprintf@prec prec `c  1 a 1 8 ]
+"508
+[v sprintf@flag flag `uc  1 a 1 7 ]
+"494
+[v sprintf@ap ap `[1]*.4v  1 a 1 6 ]
+"492
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCCuc  1 p 1 0 ]
+"542
+[v sprintf@sp sp `*.4uc  1 a 1 13 ]
+"1550
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwmod@counter counter `uc  1 a 1 13 ]
+"6
+[v ___lwmod@divisor divisor `ui  1 p 2 8 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 10 ]
+"26
+} 0
+"6 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"11
+[v ___lwdiv@quotient quotient `ui  1 a 2 5 ]
+"12
+[v ___lwdiv@counter counter `uc  1 a 1 7 ]
+"6
+[v ___lwdiv@divisor divisor `ui  1 p 2 0 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 2 ]
+"31
+} 0
+"65 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA7\LE7-3.c
+[v _lcd_print lcd_print `(v  1 e 0 0 ]
+{
+[v lcd_print@str str `*.26DCCuc  1 p 2 8 ]
+"69
+} 0
+"47
+[v _dataCtrl dataCtrl `(v  1 e 0 0 ]
+{
+[v dataCtrl@DATA DATA `uc  1 a 1 wreg ]
+[v dataCtrl@DATA DATA `uc  1 a 1 wreg ]
+[v dataCtrl@DATA DATA `uc  1 a 1 7 ]
+"54
+} 0
+"56
+[v _instCtrl instCtrl `(v  1 e 0 0 ]
+{
+[v instCtrl@INST INST `uc  1 a 1 wreg ]
+[v instCtrl@INST INST `uc  1 a 1 wreg ]
+[v instCtrl@INST INST `uc  1 a 1 7 ]
+"63
+} 0
+"39
+[v _delay_ms delay_ms `(v  1 e 0 0 ]
+{
+"41
+[v delay_ms@j j `i  1 a 2 5 ]
+"40
+[v delay_ms@i i `i  1 a 2 3 ]
+"39
+[v delay_ms@cnt cnt `i  1 p 2 0 ]
+"43
+} 0
+"28 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+{
+[v ___lwtoft@c c `ui  1 p 2 8 ]
+"31
+} 0
+"44 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+{
+"47
+[v ___fttol@lval lval `ul  1 a 4 54 ]
+"46
+[v ___fttol@exp1 exp1 `uc  1 a 1 58 ]
+[v ___fttol@sign1 sign1 `uc  1 a 1 53 ]
+"44
+[v ___fttol@f1 f1 `f  1 p 3 45 ]
+"73
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+{
+"65
+[v ___ftmul@f3_as_product f3_as_product `um  1 a 3 27 ]
+"64
+[v ___ftmul@sign sign `uc  1 a 1 31 ]
+[v ___ftmul@cntr cntr `uc  1 a 1 30 ]
+[v ___ftmul@exp exp `uc  1 a 1 26 ]
+"62
+[v ___ftmul@f1 f1 `f  1 p 3 16 ]
+[v ___ftmul@f2 f2 `f  1 p 3 19 ]
+"157
+} 0
+"49 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\pic\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+{
+"52
+[v ___ftdiv@f3 f3 `f  1 a 3 11 ]
+"51
+[v ___ftdiv@sign sign `uc  1 a 1 15 ]
+[v ___ftdiv@exp exp `uc  1 a 1 14 ]
+[v ___ftdiv@cntr cntr `uc  1 a 1 10 ]
+"49
+[v ___ftdiv@f2 f2 `f  1 p 3 0 ]
+[v ___ftdiv@f1 f1 `f  1 p 3 3 ]
+"78
+} 0
+"86 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+{
+"88
+[v ___ftadd@exp1 exp1 `uc  1 a 1 44 ]
+[v ___ftadd@exp2 exp2 `uc  1 a 1 43 ]
+[v ___ftadd@sign sign `uc  1 a 1 42 ]
+"86
+[v ___ftadd@f1 f1 `f  1 p 3 32 ]
+[v ___ftadd@f2 f2 `f  1 p 3 35 ]
+"148
+} 0
+"62 C:\Program Files (x86)\Microchip\xc8\v1.33\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+{
+[v ___ftpack@arg arg `um  1 p 3 0 ]
+[v ___ftpack@exp exp `uc  1 p 1 3 ]
+[v ___ftpack@sign sign `uc  1 p 1 4 ]
+"86
+} 0
+"121 C:\Users\enzoa\OneDrive\Documents\GitHub\3rd_Year_Archives\CpE3201_Embedded_Systems\Practical_Activities\PA7\LE7-3.c
+[v _I2C_Stop I2C_Stop `(v  1 e 0 0 ]
+{
+"124
+} 0
+"116
+[v _I2C_Start I2C_Start `(v  1 e 0 0 ]
+{
+"119
+} 0
+"131
+[v _I2C_Send I2C_Send `(v  1 e 0 0 ]
+{
+[v I2C_Send@data data `uc  1 a 1 wreg ]
+[v I2C_Send@data data `uc  1 a 1 wreg ]
+[v I2C_Send@data data `uc  1 a 1 0 ]
+"134
+} 0
+"126
+[v _I2C_RepeatedStart I2C_RepeatedStart `(v  1 e 0 0 ]
+{
+"129
+} 0
+"136
+[v _I2C_Receive I2C_Receive `(uc  1 e 1 0 ]
+{
+[v I2C_Receive@ack ack `uc  1 a 1 wreg ]
+"137
+[v I2C_Receive@temp temp `uc  1 a 1 2 ]
+"136
+[v I2C_Receive@ack ack `uc  1 a 1 wreg ]
+"138
+[v I2C_Receive@ack ack `uc  1 a 1 1 ]
+"146
+} 0
+"111
+[v _I2C_Wait I2C_Wait `(v  1 e 0 0 ]
+{
+"113
+} 0
