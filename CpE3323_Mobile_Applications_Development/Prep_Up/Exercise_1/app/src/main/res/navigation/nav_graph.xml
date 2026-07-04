@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/facilityListFragment">
+
+    <fragment
+        android:id="@+id/facilityListFragment"
+        android:name="com.example.campuskiosk.FacilityListFragment"
+        android:label="Facilities"
+        tools:layout="@layout/fragment_facility_list">
+
+        <action
+            android:id="@+id/action_list_to_detail"
+            app:destination="@id/facilityDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/facilityDetailFragment"
+        android:name="com.example.campuskiosk.FacilityDetailFragment"
+        android:label="Detail"
+        tools:layout="@layout/fragment_facility_detail">
+
+        <argument
+            android:name="facilityId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
