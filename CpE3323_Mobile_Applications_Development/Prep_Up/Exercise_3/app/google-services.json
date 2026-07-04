@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "823467007819",
+    "project_id": "mobdevquotevault",
+    "storage_bucket": "mobdevquotevault.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:823467007819:android:2cf1cf4bf5bd41db2252ce",
+        "android_client_info": {
+          "package_name": "com.example.quotevault"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOuABcfsW79lF_zVW0rtz-q0HbqOKSomI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
